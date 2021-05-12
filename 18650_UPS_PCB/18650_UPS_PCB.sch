@@ -162,45 +162,45 @@ $EndSheet
 $Comp
 L Mechanical:MountingHole H1
 U 1 1 60BDA926
-P 3150 5950
-F 0 "H1" H 3250 5996 50  0000 L CNN
-F 1 "MountingHole" H 3250 5905 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3" H 3150 5950 50  0001 C CNN
-F 3 "~" H 3150 5950 50  0001 C CNN
-	1    3150 5950
+P 4400 4400
+F 0 "H1" H 4500 4446 50  0000 L CNN
+F 1 "MountingHole" H 4500 4355 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 4400 4400 50  0001 C CNN
+F 3 "~" H 4400 4400 50  0001 C CNN
+	1    4400 4400
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H2
 U 1 1 60BDAC6E
-P 3150 6200
-F 0 "H2" H 3250 6246 50  0000 L CNN
-F 1 "MountingHole" H 3250 6155 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3" H 3150 6200 50  0001 C CNN
-F 3 "~" H 3150 6200 50  0001 C CNN
-	1    3150 6200
+P 4400 4650
+F 0 "H2" H 4500 4696 50  0000 L CNN
+F 1 "MountingHole" H 4500 4605 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 4400 4650 50  0001 C CNN
+F 3 "~" H 4400 4650 50  0001 C CNN
+	1    4400 4650
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H3
 U 1 1 60BDC958
-P 3150 6550
-F 0 "H3" H 3250 6596 50  0000 L CNN
-F 1 "MountingHole" H 3250 6505 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3" H 3150 6550 50  0001 C CNN
-F 3 "~" H 3150 6550 50  0001 C CNN
-	1    3150 6550
+P 4400 5000
+F 0 "H3" H 4500 5046 50  0000 L CNN
+F 1 "MountingHole" H 4500 4955 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 4400 5000 50  0001 C CNN
+F 3 "~" H 4400 5000 50  0001 C CNN
+	1    4400 5000
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H4
 U 1 1 60BDC95E
-P 3150 6800
-F 0 "H4" H 3250 6846 50  0000 L CNN
-F 1 "MountingHole" H 3250 6755 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3" H 3150 6800 50  0001 C CNN
-F 3 "~" H 3150 6800 50  0001 C CNN
-	1    3150 6800
+P 4400 5250
+F 0 "H4" H 4500 5296 50  0000 L CNN
+F 1 "MountingHole" H 4500 5205 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 4400 5250 50  0001 C CNN
+F 3 "~" H 4400 5250 50  0001 C CNN
+	1    4400 5250
 	1    0    0    -1  
 $EndComp
 $Sheet
