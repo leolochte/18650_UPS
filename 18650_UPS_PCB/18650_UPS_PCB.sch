@@ -20,8 +20,6 @@ STLINK
 Wire Wire Line
 	4600 1950 4700 1950
 Wire Wire Line
-	3250 1550 3350 1550
-Wire Wire Line
 	3050 1650 3350 1650
 Wire Wire Line
 	3050 1750 3050 1650
@@ -36,8 +34,6 @@ F 3 "" H 3050 1750 50  0001 C CNN
 	1    3050 1750
 	1    0    0    -1  
 $EndComp
-Text GLabel 3250 1550 0    50   Input ~ 0
-MCU_PWR
 Wire Wire Line
 	4600 2050 4700 2050
 Wire Wire Line
@@ -213,4 +209,19 @@ U 609E103F
 F0 "connectors" 50
 F1 "connectors.sch" 50
 $EndSheet
+$Comp
+L power:+3V3 #PWR?
+U 1 1 609FA77F
+P 3150 1300
+F 0 "#PWR?" H 3150 1150 50  0001 C CNN
+F 1 "+3V3" H 3165 1473 50  0000 C CNN
+F 2 "" H 3150 1300 50  0001 C CNN
+F 3 "" H 3150 1300 50  0001 C CNN
+	1    3150 1300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3150 1300 3150 1550
+Wire Wire Line
+	3150 1550 3350 1550
 $EndSCHEMATC
