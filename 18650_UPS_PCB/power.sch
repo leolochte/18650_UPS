@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 4
+Sheet 2 2
 Title ""
 Date ""
 Rev ""
@@ -130,44 +130,6 @@ Connection ~ 4700 2100
 Wire Wire Line
 	4700 2100 4700 2200
 Connection ~ 5250 1500
-$Comp
-L Switch:SW_SPDT SW?
-U 1 1 6096E9F7
-P 5700 2000
-AR Path="/6096E9F7" Ref="SW?"  Part="1" 
-AR Path="/60952D5B/6096E9F7" Ref="SW1"  Part="1" 
-F 0 "SW1" H 5700 1800 50  0000 C CNN
-F 1 "ENABLE" H 5700 1700 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_CuK_OS102011MA1QN1_SPDT_Angled" H 5700 2000 50  0001 C CNN
-F 3 "~" H 5700 2000 50  0001 C CNN
-	1    5700 2000
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	5500 2100 5250 2100
-Connection ~ 5250 2100
-Wire Wire Line
-	5500 1900 5450 1900
-Wire Wire Line
-	5900 2000 5950 2000
-Wire Wire Line
-	5950 2000 5950 1600
-$Comp
-L Jumper:SolderJumper_3_Open JP?
-U 1 1 6096EA05
-P 6350 2000
-AR Path="/6096EA05" Ref="JP?"  Part="1" 
-AR Path="/60952D5B/6096EA05" Ref="JP1"  Part="1" 
-F 0 "JP1" H 6350 2147 50  0000 C CNN
-F 1 "PWRSAVE" H 6350 2238 50  0000 C CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm" H 6350 2000 50  0001 C CNN
-F 3 "~" H 6350 2000 50  0001 C CNN
-	1    6350 2000
-	-1   0    0    1   
-$EndComp
-Connection ~ 5950 2000
-Wire Wire Line
-	5950 1600 6650 1600
 Wire Wire Line
 	4700 1400 6650 1400
 Wire Wire Line
@@ -179,10 +141,6 @@ Wire Wire Line
 Connection ~ 6950 2250
 Wire Wire Line
 	6950 2250 6950 2200
-Wire Wire Line
-	6950 2250 6650 2250
-Wire Wire Line
-	6650 2000 6650 2250
 $Comp
 L Device:C_Small C?
 U 1 1 6096EA20
@@ -309,10 +267,6 @@ Wire Wire Line
 Wire Notes Line
 	4350 4650 4350 2750
 Wire Wire Line
-	6650 4100 6650 4350
-Wire Wire Line
-	6950 4350 6650 4350
-Wire Wire Line
 	6950 4350 6950 4300
 Wire Wire Line
 	7050 4350 7050 4300
@@ -324,54 +278,9 @@ Wire Wire Line
 Wire Wire Line
 	4700 3500 6650 3500
 Wire Wire Line
-	5950 3700 6650 3700
-$Comp
-L Jumper:SolderJumper_3_Open JP?
-U 1 1 6096EABB
-P 6350 4100
-AR Path="/6096EABB" Ref="JP?"  Part="1" 
-AR Path="/60952D5B/6096EABB" Ref="JP2"  Part="1" 
-F 0 "JP2" H 6350 4247 50  0000 C CNN
-F 1 "PWRSAVE" H 6350 4338 50  0000 C CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm" H 6350 4100 50  0001 C CNN
-F 3 "~" H 6350 4100 50  0001 C CNN
-	1    6350 4100
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	5950 4100 5950 3700
-Connection ~ 5950 4100
-Wire Wire Line
-	5900 4100 5950 4100
-Wire Wire Line
-	5450 3600 6650 3600
-Wire Wire Line
-	5450 3600 5250 3600
-Connection ~ 5450 3600
-Wire Wire Line
-	5450 4000 5450 3600
-Wire Wire Line
-	5500 4000 5450 4000
-$Comp
-L Switch:SW_SPDT SW?
-U 1 1 6096EAC9
-P 5700 4100
-AR Path="/6096EAC9" Ref="SW?"  Part="1" 
-AR Path="/60952D5B/6096EAC9" Ref="SW5"  Part="1" 
-F 0 "SW5" H 5700 3900 50  0000 C CNN
-F 1 "ENABLE" H 5700 3800 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_CuK_OS102011MA1QN1_SPDT_Angled" H 5700 4100 50  0001 C CNN
-F 3 "~" H 5700 4100 50  0001 C CNN
-	1    5700 4100
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
 	4700 4200 4700 4300
 Wire Wire Line
-	5500 4200 5250 4200
-Wire Wire Line
 	5250 4200 4700 4200
-Connection ~ 5250 4200
 Wire Wire Line
 	5250 4100 5250 4200
 Connection ~ 4700 4200
@@ -456,19 +365,6 @@ F 2 "Inductor_SMD:L_1210_3225Metric" H 7050 3000 50  0001 C CNN
 F 3 "~" H 7050 3000 50  0001 C CNN
 	1    7050 3000
 	0    -1   -1   0   
-$EndComp
-$Comp
-L Regulator_Switching:TPS63000 U?
-U 1 1 6096EB01
-P 7050 3700
-AR Path="/6096EB01" Ref="U?"  Part="1" 
-AR Path="/60952D5B/6096EB01" Ref="U6"  Part="1" 
-F 0 "U6" H 6800 4300 50  0000 C CNN
-F 1 "TPS63000" H 7150 4300 50  0000 C CNN
-F 2 "Package_SON:Texas_DRC0010J_ThermalVias" H 7900 3150 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/tps63000.pdf" H 6750 4250 50  0001 C CNN
-	1    7050 3700
-	1    0    0    -1  
 $EndComp
 $Comp
 L power:GNDD #PWR?
@@ -790,47 +686,39 @@ F 3 "" H 2850 1550 50  0001 C CNN
 $EndComp
 Text Notes 800  850  0    50   ~ 0
 CC/CV Charger
-Wire Notes Line
-	650  4850 650  6750
-Wire Notes Line
-	2250 6750 650  6750
-Wire Notes Line
-	2250 4850 2250 6750
-Wire Notes Line
-	650  4850 2250 4850
 Wire Wire Line
-	1500 6350 1500 6400
-Connection ~ 1500 6350
+	1500 7000 1500 7050
+Connection ~ 1500 7000
 Wire Wire Line
-	1700 6350 1500 6350
+	1700 7000 1500 7000
 Wire Wire Line
-	1700 6400 1700 6350
+	1700 7050 1700 7000
 $Comp
 L power:GND #PWR?
 U 1 1 6097A865
-P 1700 6400
+P 1700 7050
 AR Path="/6097A865" Ref="#PWR?"  Part="1" 
 AR Path="/60952D5B/6097A865" Ref="#PWR010"  Part="1" 
-F 0 "#PWR010" H 1700 6150 50  0001 C CNN
-F 1 "GND" H 1705 6227 50  0000 C CNN
-F 2 "" H 1700 6400 50  0001 C CNN
-F 3 "" H 1700 6400 50  0001 C CNN
-	1    1700 6400
+F 0 "#PWR010" H 1700 6800 50  0001 C CNN
+F 1 "GND" H 1705 6877 50  0000 C CNN
+F 2 "" H 1700 7050 50  0001 C CNN
+F 3 "" H 1700 7050 50  0001 C CNN
+	1    1700 7050
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1500 6300 1500 6350
+	1500 6950 1500 7000
 $Comp
 L power:-BATT #PWR?
 U 1 1 6097A86D
-P 1500 6400
+P 1500 7050
 AR Path="/6097A86D" Ref="#PWR?"  Part="1" 
 AR Path="/60952D5B/6097A86D" Ref="#PWR09"  Part="1" 
-F 0 "#PWR09" H 1500 6250 50  0001 C CNN
-F 1 "-BATT" H 1515 6573 50  0000 C CNN
-F 2 "" H 1500 6400 50  0001 C CNN
-F 3 "" H 1500 6400 50  0001 C CNN
-	1    1500 6400
+F 0 "#PWR09" H 1500 6900 50  0001 C CNN
+F 1 "-BATT" H 1515 7223 50  0000 C CNN
+F 2 "" H 1500 7050 50  0001 C CNN
+F 3 "" H 1500 7050 50  0001 C CNN
+	1    1500 7050
 	-1   0    0    1   
 $EndComp
 Text Notes 750  5050 0    50   ~ 0
@@ -851,14 +739,14 @@ $EndComp
 $Comp
 L Device:Battery_Cell BT?
 U 1 1 6097A87A
-P 1500 6200
+P 1500 6850
 AR Path="/6097A87A" Ref="BT?"  Part="1" 
 AR Path="/60952D5B/6097A87A" Ref="BT1"  Part="1" 
-F 0 "BT1" H 1100 6300 50  0000 L CNN
-F 1 "INR18650-35E" H 800 6200 50  0000 L CNN
-F 2 "CUSTOM_FOOTPRINTS:Keystone_1042" V 1500 6260 50  0001 C CNN
-F 3 "~" V 1500 6260 50  0001 C CNN
-	1    1500 6200
+F 0 "BT1" H 1100 6950 50  0000 L CNN
+F 1 "INR18650-35E" H 800 6850 50  0000 L CNN
+F 2 "Battery:BatteryHolder_Keystone_1042_1x18650" V 1500 6910 50  0001 C CNN
+F 3 "~" V 1500 6910 50  0001 C CNN
+	1    1500 6850
 	1    0    0    -1  
 $EndComp
 Text GLabel 1600 5500 2    50   Input ~ 0
@@ -964,13 +852,6 @@ F 3 "" H 6950 4400 50  0001 C CNN
 	1    6950 4400
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5450 1500 6650 1500
-Wire Wire Line
-	5450 1500 5250 1500
-Connection ~ 5450 1500
-Wire Wire Line
-	5450 1900 5450 1500
 $Comp
 L Device:C_Small C?
 U 1 1 60A52356
@@ -1155,14 +1036,6 @@ Wire Notes Line
 	4350 650  9950 650 
 Wire Notes Line
 	4350 2550 9950 2550
-Wire Wire Line
-	6550 4100 6650 4100
-Wire Wire Line
-	5950 4100 6150 4100
-Wire Wire Line
-	6350 3950 6350 3900
-Wire Wire Line
-	6350 3900 6650 3900
 $Comp
 L Device:R R2
 U 1 1 60A3672E
@@ -1180,22 +1053,13 @@ Wire Wire Line
 	1500 5850 1500 5900
 Wire Wire Line
 	1600 5900 1500 5900
-Connection ~ 1500 5900
 Wire Wire Line
-	1500 5900 1500 6000
+	1500 6550 1500 6650
 Wire Wire Line
 	1600 5500 1500 5500
 Connection ~ 1500 5500
 Wire Wire Line
 	1500 5500 1500 5550
-Wire Wire Line
-	6550 2000 6650 2000
-Wire Wire Line
-	5950 2000 6150 2000
-Wire Wire Line
-	6350 1850 6350 1800
-Wire Wire Line
-	6350 1800 6650 1800
 $Comp
 L power:GNDD #PWR?
 U 1 1 60A80F88
@@ -1222,4 +1086,70 @@ F 3 "" H 7750 1950 50  0001 C CNN
 	1    7750 1950
 	1    0    0    -1  
 $EndComp
+Text GLabel 6550 3900 0    50   Input ~ 0
+PA5
+Wire Wire Line
+	5250 3600 6400 3600
+$Comp
+L Regulator_Switching:TPS63000 U?
+U 1 1 6096EB01
+P 7050 3700
+AR Path="/6096EB01" Ref="U?"  Part="1" 
+AR Path="/60952D5B/6096EB01" Ref="U6"  Part="1" 
+F 0 "U6" H 6800 4300 50  0000 C CNN
+F 1 "TPS63000" H 7150 4300 50  0000 C CNN
+F 2 "Package_SON:Texas_DRC0010J_ThermalVias" H 7900 3150 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tps63000.pdf" H 6750 4250 50  0001 C CNN
+	1    7050 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6650 3900 6550 3900
+Wire Wire Line
+	5250 1500 6400 1500
+Text GLabel 6500 1800 0    50   Input ~ 0
+PA4
+Wire Wire Line
+	6500 1800 6650 1800
+Wire Wire Line
+	6400 1600 6400 1500
+Wire Wire Line
+	6400 1600 6650 1600
+Connection ~ 6400 1500
+Wire Wire Line
+	6400 1500 6650 1500
+Wire Notes Line
+	650  4850 650  7600
+Wire Notes Line
+	650  7600 2300 7600
+Wire Notes Line
+	2300 4850 2300 7600
+Wire Notes Line
+	650  4850 2300 4850
+Wire Wire Line
+	6400 3700 6400 3600
+Wire Wire Line
+	6400 3700 6650 3700
+Connection ~ 6400 3600
+Wire Wire Line
+	6400 3600 6650 3600
+$Comp
+L Switch:SW_SPDT SW1
+U 1 1 60BDD630
+P 1500 6350
+F 0 "SW1" V 1546 6162 50  0000 R CNN
+F 1 "SW_SPDT" V 1455 6162 50  0000 R CNN
+F 2 "CUSTOM_FOOTPRINTS:ALPS_SPEF210101" H 1500 6350 50  0001 C CNN
+F 3 "~" H 1500 6350 50  0001 C CNN
+	1    1500 6350
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1600 6150 1600 6000
+Wire Wire Line
+	1600 6000 1500 6000
+Wire Wire Line
+	1500 6000 1500 5900
+Connection ~ 1500 5900
+NoConn ~ 1400 6150
 $EndSCHEMATC
