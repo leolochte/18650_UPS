@@ -156,45 +156,45 @@ Wire Notes Line
 $Comp
 L Mechanical:MountingHole H1
 U 1 1 60BDA926
-P 5700 6600
-F 0 "H1" H 5800 6646 50  0000 L CNN
-F 1 "MountingHole" H 5800 6555 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3" H 5700 6600 50  0001 C CNN
-F 3 "~" H 5700 6600 50  0001 C CNN
-	1    5700 6600
+P 5400 6600
+F 0 "H1" H 5500 6646 50  0000 L CNN
+F 1 "MountingHole" H 5500 6555 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 5400 6600 50  0001 C CNN
+F 3 "~" H 5400 6600 50  0001 C CNN
+	1    5400 6600
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H2
 U 1 1 60BDAC6E
-P 5700 6850
-F 0 "H2" H 5800 6896 50  0000 L CNN
-F 1 "MountingHole" H 5800 6805 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3" H 5700 6850 50  0001 C CNN
-F 3 "~" H 5700 6850 50  0001 C CNN
-	1    5700 6850
+P 5400 6850
+F 0 "H2" H 5500 6896 50  0000 L CNN
+F 1 "MountingHole" H 5500 6805 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 5400 6850 50  0001 C CNN
+F 3 "~" H 5400 6850 50  0001 C CNN
+	1    5400 6850
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H3
 U 1 1 60BDC958
-P 5700 7200
-F 0 "H3" H 5800 7246 50  0000 L CNN
-F 1 "MountingHole" H 5800 7155 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3" H 5700 7200 50  0001 C CNN
-F 3 "~" H 5700 7200 50  0001 C CNN
-	1    5700 7200
+P 5400 7200
+F 0 "H3" H 5500 7246 50  0000 L CNN
+F 1 "MountingHole" H 5500 7155 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 5400 7200 50  0001 C CNN
+F 3 "~" H 5400 7200 50  0001 C CNN
+	1    5400 7200
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H4
 U 1 1 60BDC95E
-P 5700 7450
-F 0 "H4" H 5800 7496 50  0000 L CNN
-F 1 "MountingHole" H 5800 7405 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3" H 5700 7450 50  0001 C CNN
-F 3 "~" H 5700 7450 50  0001 C CNN
-	1    5700 7450
+P 5400 7450
+F 0 "H4" H 5500 7496 50  0000 L CNN
+F 1 "MountingHole" H 5500 7405 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 5400 7450 50  0001 C CNN
+F 3 "~" H 5400 7450 50  0001 C CNN
+	1    5400 7450
 	1    0    0    -1  
 $EndComp
 $Comp
