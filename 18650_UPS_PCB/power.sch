@@ -1088,8 +1088,6 @@ F 3 "" H 7750 1950 50  0001 C CNN
 $EndComp
 Text GLabel 6550 3900 0    50   Input ~ 0
 PA5
-Wire Wire Line
-	5250 3600 6400 3600
 $Comp
 L Regulator_Switching:TPS63000 U?
 U 1 1 6096EB01
@@ -1126,13 +1124,6 @@ Wire Notes Line
 	2300 4850 2300 7600
 Wire Notes Line
 	650  4850 2300 4850
-Wire Wire Line
-	6400 3700 6400 3600
-Wire Wire Line
-	6400 3700 6650 3700
-Connection ~ 6400 3600
-Wire Wire Line
-	6400 3600 6650 3600
 $Comp
 L Switch:SW_SPDT SW1
 U 1 1 60BDD630
@@ -1152,4 +1143,10 @@ Wire Wire Line
 	1500 6000 1500 5900
 Connection ~ 1500 5900
 NoConn ~ 1400 6150
+Text GLabel 6550 3700 0    50   Input ~ 0
+PA6
+Wire Wire Line
+	5250 3600 6650 3600
+Wire Wire Line
+	6550 3700 6650 3700
 $EndSCHEMATC

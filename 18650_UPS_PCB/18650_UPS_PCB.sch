@@ -947,5 +947,8 @@ PA4
 Text GLabel 10000 2600 2    50   Input ~ 0
 PA5
 NoConn ~ 9900 2800
-NoConn ~ 9900 2700
+Text GLabel 10000 2700 2    50   Input ~ 0
+PA6
+Wire Wire Line
+	10000 2700 9900 2700
 $EndSCHEMATC
