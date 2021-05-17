@@ -13,8 +13,8 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 7100 7050 0    50   ~ 0
-To-Do:\n- pullup scl sda ?\n- check new symbol pins\n- mosfet gate conenctions order\n- breakout for other stm32 pins
+Text Notes 7100 6950 0    50   ~ 0
+To-Do:\n- check new symbol pins\n- breakout for other stm32 pin\n- stc footprint change
 Text Notes 2900 950  0    50   ~ 0
 STLINK
 Wire Wire Line
@@ -715,7 +715,7 @@ Wire Wire Line
 Wire Wire Line
 	9900 3000 10000 3000
 Wire Wire Line
-	7100 2100 7600 2100
+	7100 2100 7200 2100
 Wire Wire Line
 	3000 6500 3300 6500
 Wire Wire Line
@@ -951,4 +951,37 @@ Text GLabel 10000 2700 2    50   Input ~ 0
 PA6
 Wire Wire Line
 	10000 2700 9900 2700
+$Comp
+L Device:R_Small R?
+U 1 1 60AC88F6
+P 7200 1850
+AR Path="/609F1585/60AC88F6" Ref="R?"  Part="1" 
+AR Path="/60AC88F6" Ref="R17"  Part="1" 
+F 0 "R17" H 7259 1896 50  0000 L CNN
+F 1 "10 kOhm" H 7259 1805 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 7200 1850 50  0001 C CNN
+F 3 "~" H 7200 1850 50  0001 C CNN
+	1    7200 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7200 2100 7200 1950
+Connection ~ 7200 2100
+Wire Wire Line
+	7200 2100 7600 2100
+$Comp
+L power:+3.3V #PWR020
+U 1 1 60ADE6A0
+P 7200 1650
+AR Path="/60ADE6A0" Ref="#PWR020"  Part="1" 
+AR Path="/609F1585/60ADE6A0" Ref="#PWR?"  Part="1" 
+F 0 "#PWR020" H 7200 1500 50  0001 C CNN
+F 1 "+3.3V" H 7215 1823 50  0000 C CNN
+F 2 "" H 7200 1650 50  0001 C CNN
+F 3 "" H 7200 1650 50  0001 C CNN
+	1    7200 1650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7200 1750 7200 1650
 $EndSCHEMATC
