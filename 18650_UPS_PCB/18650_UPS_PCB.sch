@@ -13,8 +13,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 7100 6950 0    50   ~ 0
-To-Do:\n- check new symbol pins\n- breakout for other stm32 pin\n- stc footprint change
 Text Notes 2900 950  0    50   ~ 0
 STLINK
 Wire Wire Line
