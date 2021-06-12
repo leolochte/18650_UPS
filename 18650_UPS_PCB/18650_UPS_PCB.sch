@@ -1284,8 +1284,6 @@ Wire Wire Line
 Wire Wire Line
 	6700 8300 6600 8300
 Wire Wire Line
-	6600 8950 6600 9000
-Wire Wire Line
 	6700 7900 6600 7900
 Connection ~ 6600 7900
 Wire Wire Line
@@ -1325,8 +1323,6 @@ Wire Wire Line
 	8200 5950 8200 6150
 Wire Wire Line
 	7300 5950 8200 5950
-Wire Wire Line
-	6600 9350 6600 9400
 $Comp
 L power:-BATT #PWR015
 U 1 1 60CF5635
@@ -1373,19 +1369,6 @@ F 1 "ME2188Cxx" H 12950 5874 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-5" H 12150 6100 50  0001 C CNN
 F 3 "" H 12150 6100 50  0001 C CNN
 	1    12550 5800
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+5V #PWR027
-U 1 1 60E79ACF
-P 13350 5800
-AR Path="/60E79ACF" Ref="#PWR027"  Part="1" 
-AR Path="/60952D5B/60E79ACF" Ref="#PWR?"  Part="1" 
-F 0 "#PWR027" H 13350 5650 50  0001 C CNN
-F 1 "+5V" H 13365 5973 50  0000 C CNN
-F 2 "" H 13350 5800 50  0001 C CNN
-F 3 "" H 13350 5800 50  0001 C CNN
-	1    13350 5800
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1463,8 +1446,6 @@ Wire Wire Line
 Wire Wire Line
 	13250 5900 13350 5900
 Connection ~ 13350 5900
-Wire Wire Line
-	13350 5900 13350 5800
 $Comp
 L power:GNDD #PWR028
 U 1 1 60EF3049
@@ -1563,19 +1544,6 @@ F 3 "" H 12000 4100 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	12000 4100 12000 4000
-$Comp
-L power:+3V3 #PWR031
-U 1 1 60F8808E
-P 13900 3700
-AR Path="/60F8808E" Ref="#PWR031"  Part="1" 
-AR Path="/60952D5B/60F8808E" Ref="#PWR?"  Part="1" 
-F 0 "#PWR031" H 13900 3550 50  0001 C CNN
-F 1 "+3V3" H 13915 3873 50  0000 C CNN
-F 2 "" H 13900 3700 50  0001 C CNN
-F 3 "" H 13900 3700 50  0001 C CNN
-	1    13900 3700
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	13250 3950 13350 3950
 Wire Wire Line
@@ -1709,19 +1677,6 @@ Wire Wire Line
 Connection ~ 11950 7950
 Wire Wire Line
 	11950 7950 11950 7900
-$Comp
-L power:+3.3VA #PWR029
-U 1 1 6112D4E0
-P 13700 7850
-F 0 "#PWR029" H 13700 7700 50  0001 C CNN
-F 1 "+3.3VA" H 13715 8023 50  0000 C CNN
-F 2 "" H 13700 7850 50  0001 C CNN
-F 3 "" H 13700 7850 50  0001 C CNN
-	1    13700 7850
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	13700 7950 13700 7850
 Connection ~ 13700 7950
 Wire Notes Line
 	11500 7300 14600 7300
@@ -1810,93 +1765,12 @@ F 3 "~" H 13350 6100 50  0001 C CNN
 	1    13350 6100
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector:TestPoint TP1
-U 1 1 60CA037D
-P 6900 8900
-F 0 "TP1" H 6958 9018 50  0000 L CNN
-F 1 "TestPoint" H 6958 8927 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Keystone_5015_Micro-Minature" H 7100 8900 50  0001 C CNN
-F 3 "~" H 7100 8900 50  0001 C CNN
-	1    6900 8900
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP2
-U 1 1 60CAD6BC
-P 6900 9350
-F 0 "TP2" H 6958 9468 50  0000 L CNN
-F 1 "TestPoint" H 6958 9377 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Keystone_5015_Micro-Minature" H 7100 9350 50  0001 C CNN
-F 3 "~" H 7100 9350 50  0001 C CNN
-	1    6900 9350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6900 9350 6900 9400
-Wire Wire Line
-	6900 9400 6600 9400
-Connection ~ 6600 9400
-Wire Wire Line
-	6600 9400 6600 9450
-Wire Wire Line
-	6900 8900 6900 9000
-Wire Wire Line
-	6900 9000 6600 9000
-Connection ~ 6600 9000
-Wire Wire Line
-	6600 9000 6600 9050
-$Comp
-L Connector:TestPoint TP4
-U 1 1 60CC539E
-P 14000 7900
-F 0 "TP4" H 14058 8018 50  0000 L CNN
-F 1 "TestPoint" H 14058 7927 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Keystone_5015_Micro-Minature" H 14200 7900 50  0001 C CNN
-F 3 "~" H 14200 7900 50  0001 C CNN
-	1    14000 7900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	13700 7950 14000 7950
-Wire Wire Line
-	14000 7950 14000 7900
-$Comp
-L Connector:TestPoint TP3
-U 1 1 60CD1FDC
-P 13650 5850
-F 0 "TP3" H 13708 5968 50  0000 L CNN
-F 1 "TestPoint" H 13708 5877 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Keystone_5015_Micro-Minature" H 13850 5850 50  0001 C CNN
-F 3 "~" H 13850 5850 50  0001 C CNN
-	1    13650 5850
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	13350 5900 13650 5900
-Wire Wire Line
-	13650 5900 13650 5850
-$Comp
-L Connector:TestPoint TP5
-U 1 1 60CDED71
-P 14150 3750
-F 0 "TP5" H 14208 3868 50  0000 L CNN
-F 1 "TestPoint" H 14208 3777 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Keystone_5015_Micro-Minature" H 14350 3750 50  0001 C CNN
-F 3 "~" H 14350 3750 50  0001 C CNN
-	1    14150 3750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	13900 3700 13900 3750
 Wire Wire Line
 	13650 3750 13900 3750
 Connection ~ 13650 3750
 Connection ~ 13900 3750
 Wire Wire Line
 	13900 3750 13900 3800
-Wire Wire Line
-	13900 3750 14150 3750
 $Comp
 L Connector:USB_A J3
 U 1 1 60D1113B
@@ -2227,15 +2101,62 @@ Text GLabel 4150 10550 0    50   Input ~ 0
 PB1
 NoConn ~ 4150 10550
 NoConn ~ 2900 10450
+Wire Wire Line
+	13900 3700 13900 3750
 $Comp
-L power:+3.3VA #PWR?
+L power:+3V3 #PWR031
+U 1 1 60F8808E
+P 13900 3700
+AR Path="/60F8808E" Ref="#PWR031"  Part="1" 
+AR Path="/60952D5B/60F8808E" Ref="#PWR?"  Part="1" 
+F 0 "#PWR031" H 13900 3550 50  0001 C CNN
+F 1 "+3V3" H 13915 3873 50  0000 C CNN
+F 2 "" H 13900 3700 50  0001 C CNN
+F 3 "" H 13900 3700 50  0001 C CNN
+	1    13900 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	13350 5900 13350 5800
+$Comp
+L power:+5V #PWR027
+U 1 1 60E79ACF
+P 13350 5800
+AR Path="/60E79ACF" Ref="#PWR027"  Part="1" 
+AR Path="/60952D5B/60E79ACF" Ref="#PWR?"  Part="1" 
+F 0 "#PWR027" H 13350 5650 50  0001 C CNN
+F 1 "+5V" H 13365 5973 50  0000 C CNN
+F 2 "" H 13350 5800 50  0001 C CNN
+F 3 "" H 13350 5800 50  0001 C CNN
+	1    13350 5800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3VA #PWR0110
 U 1 1 61291B27
 P 2150 4850
-F 0 "#PWR?" H 2150 4700 50  0001 C CNN
+F 0 "#PWR0110" H 2150 4700 50  0001 C CNN
 F 1 "+3.3VA" H 2165 5023 50  0000 C CNN
 F 2 "" H 2150 4850 50  0001 C CNN
 F 3 "" H 2150 4850 50  0001 C CNN
 	1    2150 4850
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	13700 7950 13700 7850
+$Comp
+L power:+3.3VA #PWR029
+U 1 1 6112D4E0
+P 13700 7850
+F 0 "#PWR029" H 13700 7700 50  0001 C CNN
+F 1 "+3.3VA" H 13715 8023 50  0000 C CNN
+F 2 "" H 13700 7850 50  0001 C CNN
+F 3 "" H 13700 7850 50  0001 C CNN
+	1    13700 7850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6600 9350 6600 9450
+Wire Wire Line
+	6600 8950 6600 9050
 $EndSCHEMATC
