@@ -1868,9 +1868,9 @@ Text GLabel 6850 1500 2    50   Input ~ 0
 PA5
 Text GLabel 6050 1750 0    50   Input ~ 0
 PA6
-Text GLabel 9000 8000 0    50   Input ~ 0
-PA0
 Text GLabel 9000 8800 0    50   Input ~ 0
+PA0
+Text GLabel 9000 8000 0    50   Input ~ 0
 PA1
 Text GLabel 10550 7900 2    50   Input ~ 0
 BuckCE
