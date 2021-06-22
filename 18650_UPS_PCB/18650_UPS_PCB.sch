@@ -1862,15 +1862,15 @@ F 3 "~" H 10200 9450 50  0001 C CNN
 	1    10200 9450
 	-1   0    0    1   
 $EndComp
-Text GLabel 6050 1500 0    50   Input ~ 0
-PA4
-Text GLabel 6850 1500 2    50   Input ~ 0
-PA5
-Text GLabel 6050 1750 0    50   Input ~ 0
-PA6
 Text GLabel 9000 8800 0    50   Input ~ 0
+PA4
+Text GLabel 6050 1500 0    50   Input ~ 0
+PA5
+Text GLabel 6850 1750 2    50   Input ~ 0
+PA6
+Text GLabel 6550 2000 2    50   Input ~ 0
 PA0
-Text GLabel 9000 8000 0    50   Input ~ 0
+Text GLabel 6050 1750 0    50   Input ~ 0
 PA1
 Text GLabel 10550 7900 2    50   Input ~ 0
 BuckCE
@@ -2152,11 +2152,11 @@ Wire Wire Line
 	2850 5200 2950 5200
 Wire Wire Line
 	2850 5300 2950 5300
-Text GLabel 4900 10600 0    50   Input ~ 0
+Text GLabel 6850 1500 2    50   Input ~ 0
 PB1
-Text GLabel 6850 1750 2    50   Input ~ 0
+Text GLabel 6850 2250 2    50   Input ~ 0
 PF0
-Text GLabel 6550 2000 2    50   Input ~ 0
+Text GLabel 9000 8000 0    50   Input ~ 0
 PF1
-NoConn ~ 4900 10600
+NoConn ~ 6850 2250
 $EndSCHEMATC
