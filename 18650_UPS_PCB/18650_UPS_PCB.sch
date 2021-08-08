@@ -646,7 +646,7 @@ Text GLabel 13200 4350 0    50   Input ~ 0
 TM-Center
 Text Notes 3800 6450 0    50   ~ 0
 Control
-Text GLabel 13150 3850 0    50   Input ~ 0
+Text GLabel 14750 3050 2    50   Input ~ 0
 INA-ALERT
 Wire Notes Line
 	3500 6200 7400 6200
@@ -1106,7 +1106,7 @@ Wire Wire Line
 Wire Wire Line
 	13150 4450 13300 4450
 Wire Wire Line
-	13300 3850 13150 3850
+	14600 3050 14750 3050
 Wire Wire Line
 	14700 2850 14600 2850
 NoConn ~ 13300 5250
@@ -1416,7 +1416,7 @@ Wire Wire Line
 Wire Wire Line
 	14600 4650 14700 4650
 NoConn ~ 14700 2950
-NoConn ~ 14700 3050
+NoConn ~ 13200 3850
 NoConn ~ 14700 3150
 NoConn ~ 14700 3250
 NoConn ~ 14700 3550
@@ -1463,7 +1463,7 @@ Wire Wire Line
 Wire Wire Line
 	14700 3150 14600 3150
 Wire Wire Line
-	14600 3050 14700 3050
+	13300 3850 13200 3850
 Wire Wire Line
 	14600 2950 14700 2950
 Wire Wire Line
