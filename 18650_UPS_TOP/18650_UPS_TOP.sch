@@ -424,17 +424,6 @@ F 3 "~" H 6500 8000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H2
-U 1 1 610E97F8
-P 6500 8300
-F 0 "H2" H 6600 8346 50  0000 L CNN
-F 1 "MountingHole" H 6600 8255 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3" H 6500 8300 50  0001 C CNN
-F 3 "~" H 6500 8300 50  0001 C CNN
-	1    6500 8300
-	1    0    0    -1  
-$EndComp
-$Comp
 L Mechanical:MountingHole H3
 U 1 1 610E9984
 P 6500 8600
@@ -443,17 +432,6 @@ F 1 "MountingHole" H 6600 8555 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3" H 6500 8600 50  0001 C CNN
 F 3 "~" H 6500 8600 50  0001 C CNN
 	1    6500 8600
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole H4
-U 1 1 610E9AED
-P 6500 8900
-F 0 "H4" H 6600 8946 50  0000 L CNN
-F 1 "MountingHole" H 6600 8855 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3" H 6500 8900 50  0001 C CNN
-F 3 "~" H 6500 8900 50  0001 C CNN
-	1    6500 8900
 	1    0    0    -1  
 $EndComp
 $Comp
