@@ -1,18 +1,18 @@
 G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,(5.1.5)-3*
-G04 #@! TF.CreationDate,2021-05-18T14:06:46+02:00*
+G04 #@! TF.CreationDate,2021-08-11T14:04:56+02:00*
 G04 #@! TF.ProjectId,18650_UPS_PCB,31383635-305f-4555-9053-5f5043422e6b,rev?*
 G04 #@! TF.SameCoordinates,Original*
 G04 #@! TF.FileFunction,Paste,Bot*
 G04 #@! TF.FilePolarity,Positive*
 %FSLAX46Y46*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-G04 Created by KiCad (PCBNEW (5.1.5)-3) date 2021-05-18 14:06:46*
+G04 Created by KiCad (PCBNEW (5.1.5)-3) date 2021-08-11 14:04:56*
 %MOMM*%
 %LPD*%
 G04 APERTURE LIST*
 %ADD10R,7.340000X6.350000*%
 G04 APERTURE END LIST*
 D10*
-X205140000Y-85185000D03*
-X126480000Y-85185000D03*
+X126380000Y-85685000D03*
+X205040000Y-85685000D03*
 M02*
