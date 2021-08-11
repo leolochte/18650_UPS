@@ -1,5 +1,7 @@
 # 18650 UPS
 
-A steady 3V3 and 5V output from a 18650 Li-Ion Cell, including a STM32 to monitor capacity.
+This Project is a charger and monitoring PCB. It features a fancy MP2667 charger IC and an even fancier INA237 current and power monitor. 
 
-![Screenshot](Screenshots/V2.JPG)
+A STM32L151 is used to display content on the external 128x64 OLED display.
+
+![Screenshot](Screenshots/v3.JPG)
