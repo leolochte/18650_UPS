@@ -22,10 +22,10 @@ As all Li-Ion batteries should be treated with great care, my desired safety fea
 
 # Part Selection
 
-**MP2667**        - I2C programmable Charge IC with heaps of safety features and output current limiting
-**INA237**        - 16-Bit current, power, temperature and voltage monitor with I2C Interface
-**STM32L151RCT6** - Simply because i had them lying around
-**1.3" OLED**     - To configure the charger and display sensor data
+- **MP2667**        - I2C programmable Charge IC with heaps of safety features and output current limiting
+- **INA237**        - 16-Bit current, power, temperature and voltage monitor with I2C Interface
+- **STM32L151RCT6** - Simply because i had them lying around
+- **1.3" OLED**     - To configure the charger and display sensor data
 
 # Current State Of Project
 
