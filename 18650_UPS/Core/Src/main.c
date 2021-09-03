@@ -48,7 +48,7 @@ TIM_HandleTypeDef htim2;
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
-uint8_t aRxBuffer[2];
+uint8_t aRxBuffer[3];
 uint8_t TxBuffer[2];
 uint8_t charBuffer[10];
 uint16_t temp;
@@ -58,6 +58,8 @@ uint8_t state_SW_U = 0;
 uint8_t state_SW_D = 0;
 uint8_t state_SW_L = 0;
 uint8_t state_SW_R = 0;
+
+volatile uint8_t setting_state = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -108,6 +110,7 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   ssd1306_Init();
+  //ssd1306_SetContrast(0x05); //enable to save 3mA
 
   //resetting ina237
   TxBuffer[0] = 0x80;
@@ -128,7 +131,7 @@ int main(void)
   HAL_I2C_Mem_Read(&hi2c1, 0x45<<1, 0x01, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
   temp = (aRxBuffer[0]<<8) | aRxBuffer[1];
   TxBuffer[0] = aRxBuffer[0];
-  TxBuffer[1] = aRxBuffer[1] | 0x03;
+  TxBuffer[1] = aRxBuffer[1] | 0x05;
   HAL_I2C_Mem_Write(&hi2c1, 0x45<<1, 0x01, 1, TxBuffer, sizeof(TxBuffer), 1000);
 
   /* USER CODE END 2 */
@@ -156,9 +159,48 @@ int main(void)
 			  sprintf(charBuffer, "%u uV\r\n", temp);
 	  		  break;
 	  	  case 2:
+	  		  //vbus
+			  HAL_I2C_Mem_Read(&hi2c1, 0x45<<1, 0x05, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
+			  temp = 3.125*(float)((aRxBuffer[0]<<8) | aRxBuffer[1]);
+			  sprintf(charBuffer, "%u mV\r\n", temp);
 	  		  break;
+	  	  case 3:
+			  //dietemp
+			  HAL_I2C_Mem_Read(&hi2c1, 0x45<<1, 0x06, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
+			  temp = 0.125*(float)((aRxBuffer[0]<<8) | aRxBuffer[1]);
+			  temp = temp>>4;
+			  sprintf(charBuffer, "%u C\r\n", temp);
+			  break;
+	  	  case 4:
+			  //power
+			  HAL_I2C_Mem_Read(&hi2c1, 0x45<<1, 0x08, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
+			  temp = 0.2*0.0610352*(float)((aRxBuffer[0]<<16) | aRxBuffer[1]<<8 | aRxBuffer[0]);
+			  sprintf(charBuffer, "%u mW\r\n", temp);
+			  break;
+	  	  case 5:
+			  //charge status
+			  HAL_I2C_Mem_Read(&hi2c1, 0x09<<1, 0x07, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
+			  temp = (aRxBuffer[0] & 0b00011000)>>3;
+			  switch (temp) {
+				  case 0:
+					  sprintf(charBuffer, "No Chrg", temp);
+					  break;
+				  case 1:
+					  sprintf(charBuffer, "Pre Chrg", temp);
+					  break;
+				  case 2:
+					  sprintf(charBuffer, "Charging", temp);
+					  break;
+				  case 3:
+					  sprintf(charBuffer, "Done!", temp);
+					  break;
+				  default:
+					  break;
+			  }
+			  break;
+			  case 6:
+				  break;
 	  	  default:
-		  	  read_state = 0;
 		  	  break;
 	  }
 
@@ -167,14 +209,14 @@ int main(void)
 	  ssd1306_Fill(Black);
 	  ssd1306_SetCursor(0, 0);
 	  ssd1306_WriteString(&charBuffer, Font_16x26, White);
-	  //ssd1306_UpdateScreen();
+	  ssd1306_UpdateScreen();
 
-	  sprintf(charBuffer,"%u\r\n", read_state);
+	  //sprintf(charBuffer,"%u\r\n", read_state);
 
 	  //ssd1306_Fill(Black);
-	  ssd1306_SetCursor(96, 0);
-	  ssd1306_WriteString(&charBuffer, Font_11x18, White);
-	  ssd1306_UpdateScreen();
+	  //ssd1306_SetCursor(96, 0);
+	  //ssd1306_WriteString(&charBuffer, Font_11x18, White);
+	  //ssd1306_UpdateScreen();
 
 	  HAL_Delay(100);
   }
@@ -196,9 +238,10 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
-  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_MSI;
+  RCC_OscInitStruct.MSIState = RCC_MSI_ON;
+  RCC_OscInitStruct.MSICalibrationValue = 0;
+  RCC_OscInitStruct.MSIClockRange = RCC_MSIRANGE_5;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
@@ -208,7 +251,7 @@ void SystemClock_Config(void)
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_MSI;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
@@ -272,7 +315,7 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 16000;
+  htim2.Init.Prescaler = 2097;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim2.Init.Period = 50;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -314,7 +357,7 @@ static void MX_USART1_UART_Init(void)
 
   /* USER CODE END USART1_Init 1 */
   huart1.Instance = USART1;
-  huart1.Init.BaudRate = 115200;
+  huart1.Init.BaudRate = 9600;
   huart1.Init.WordLength = UART_WORDLENGTH_8B;
   huart1.Init.StopBits = UART_STOPBITS_1;
   huart1.Init.Parity = UART_PARITY_NONE;
@@ -360,52 +403,20 @@ static void MX_GPIO_Init(void)
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 	switch (GPIO_Pin) {
 		case SW_U_Pin:
-			switch (state_SW_U) {
-				case 0:
-					state_SW_U = 1;
-					HAL_TIM_Base_Start_IT(&htim2);
-					break;
-				case 1:
-					break;
-				default:
-					break;
-			}
+			state_SW_U = 1;
+			HAL_TIM_Base_Start_IT(&htim2);
 			break;
 		case SW_D_Pin:
-			switch (state_SW_D) {
-				case 0:
-					state_SW_D = 1;
-					HAL_TIM_Base_Start_IT(&htim2);
-					break;
-				case 1:
-					break;
-				default:
-					break;
-			}
+			state_SW_D = 1;
+			HAL_TIM_Base_Start_IT(&htim2);
 			break;
 		case SW_L_Pin:
-			switch (state_SW_L) {
-				case 0:
-					state_SW_L = 1;
-					HAL_TIM_Base_Start_IT(&htim2);
-					break;
-				case 1:
-					break;
-				default:
-					break;
-			}
+			state_SW_L = 1;
+			HAL_TIM_Base_Start_IT(&htim2);
 			break;
 		case SW_R_Pin:
-			switch (state_SW_R) {
-				case 0:
-					state_SW_R = 1;
-					HAL_TIM_Base_Start_IT(&htim2);
-					break;
-				case 1:
-					break;
-				default:
-					break;
-			}
+			state_SW_R = 1;
+			HAL_TIM_Base_Start_IT(&htim2);
 			break;
 		default:
 			break;
@@ -419,7 +430,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		 state_SW_U = 0;
 		 HAL_TIM_Base_Stop_IT(&htim2);
 
-		 if (read_state == 2) {
+		 if (read_state == 5) {
 			 read_state = 0;
 		 } else {
 			 read_state++;
@@ -430,7 +441,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		 HAL_TIM_Base_Stop_IT(&htim2);
 
 		 if (read_state == 0) {
-			 read_state = 2;
+			 read_state = 5;
 		 } else {
 			 read_state--;
 		 }
@@ -438,10 +449,14 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	 if (state_SW_L == 1 && HAL_GPIO_ReadPin(SW_L_GPIO_Port, SW_L_Pin) == GPIO_PIN_RESET) {
 		 state_SW_L = 0;
 		 HAL_TIM_Base_Stop_IT(&htim2);
+
+
 	 }
 	 if (state_SW_R == 1 && HAL_GPIO_ReadPin(SW_R_GPIO_Port, SW_R_Pin) == GPIO_PIN_RESET) {
 		 state_SW_R = 0;
 		 HAL_TIM_Base_Stop_IT(&htim2);
+
+
 	 }
   }
 }
