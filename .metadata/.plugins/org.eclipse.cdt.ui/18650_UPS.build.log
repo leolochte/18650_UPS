@@ -1,51 +1,10 @@
-10:07:21 **** Incremental Build of configuration Debug for project 18650_UPS ****
+14:50:44 **** Incremental Build of configuration Debug for project 18650_UPS ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:114:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
-  114 |    sprintf(charBuffer, "%u\r\n", temp);
-      |            ^~~~~~~~~~
-      |            |
-      |            uint8_t * {aka unsigned char *}
-In file included from ../Core/Src/main.c:26:
-c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-  244 | int sprintf (char *__restrict, const char *__restrict, ...)
-      |              ^
-../Core/Src/main.c:116:31: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
-  116 |    HAL_UART_Transmit(&huart1, &charBuffer, 6, 500);
-      |                               ^~~~~~~~~~~
-      |                               |
-      |                               uint8_t (*)[6] {aka unsigned char (*)[6]}
-In file included from ../Core/Inc/stm32l1xx_hal_conf.h:285,
-                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h:30,
-                 from ../Core/Inc/main.h:31,
-                 from ../Core/Src/main.c:21:
-../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h:721:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
-  721 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~^~~~~
-../Core/Src/main.c:120:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
-  120 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
-      |                        ^~~~~~~~~~~
-      |                        |
-      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
-In file included from ../Core/Src/main.c:25:
-../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
-  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
-      |                          ~~~~~~^~~
-arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 18650_UPS.elf
- 
 arm-none-eabi-size   18650_UPS.elf 
-arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
-arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
    text	   data	    bss	    dec	    hex	filename
-  22836	    128	   2296	  25260	   62ac	18650_UPS.elf
+  29188	    136	   2368	  31692	   7bcc	18650_UPS.elf
 Finished building: default.size.stdout
  
-Finished building: 18650_UPS.bin
- 
-Finished building: 18650_UPS.list
- 
 
-10:07:22 Build Finished. 0 errors, 3 warnings. (took 960ms)
+14:50:44 Build Finished. 0 errors, 0 warnings. (took 313ms)
 

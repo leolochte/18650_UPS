@@ -358,3 +358,2014 @@ Finished building: 18650_UPS.bin
  
 Finished building: 18650_UPS.list
  
+10:30:21 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: unsigned conversion from 'int' to 'uint8_t' {aka 'unsigned char'} changes value from '500' to '244' [-Woverflow]
+  126 |    TxBuffer = 500;
+      |               ^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  10104	     20	   2268	  12392	   3068	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+10:31:05 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:15: warning: unsigned conversion from 'int' to 'uint8_t' {aka 'unsigned char'} changes value from '500' to '244' [-Woverflow]
+  126 |    TxBuffer = 500;
+      |               ^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11872	     20	   2268	  14160	   3750	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+10:32:20 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:127:48: warning: passing argument 5 of 'HAL_I2C_Mem_Write' from incompatible pointer type [-Wincompatible-pointer-types]
+  127 |    HAL_I2C_Mem_Write(&hi2c1, 0x45<<1, 0x02, 1, &TxBuffer, 1, 1000);
+      |                                                ^~~~~~~~~
+      |                                                |
+      |                                                uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32l1xx_hal_conf.h:245,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2c.h:568:134: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  568 | HAL_StatusTypeDef HAL_I2C_Mem_Write(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint16_t MemAddress, uint16_t MemAddSize, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                                                                             ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11872	     20	   2268	  14160	   3750	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+10:33:31 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:18: warning: unsigned conversion from 'int' to 'uint8_t' {aka 'unsigned char'} changes value from '500' to '244' [-Woverflow]
+  126 |    TxBuffer[1] = 500;
+      |                  ^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11872	     20	   2268	  14160	   3750	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+10:35:26 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11876	     20	   2268	  14164	   3754	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+10:36:05 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:131:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  131 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  16860	    120	   2296	  19276	   4b4c	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+10:37:46 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:131:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  131 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  14272	    120	   2296	  16688	   4130	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+10:40:15 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:132:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  132 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:136:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  136 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  19832	    128	   2296	  22256	   56f0	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+10:43:53 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:131:49: error: invalid operands to binary | (have 'double' and 'int')
+  131 |    temp = 0.0000610352*(float)(aRxBuffer[0]<<8) | aRxBuffer[1];
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~
+      |                       |                                    |
+      |                       double                               uint8_t {aka unsigned char}
+../Core/Src/main.c:132:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  132 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:136:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  136 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+10:44:12 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:132:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  132 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:136:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  136 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  22428	    128	   2296	  24852	   6114	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+10:44:57 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:132:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  132 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:136:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  136 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  22428	    128	   2296	  24852	   6114	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+10:45:39 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-size   18650_UPS.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22428	    128	   2296	  24852	   6114	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+10:50:56 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:141:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  141 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:145:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  145 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  22572	    128	   2296	  24996	   61a4	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+10:53:58 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:141:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  141 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:145:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  145 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  22572	    128	   2296	  24996	   61a4	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+10:55:39 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:143:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  143 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:147:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  147 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  22572	    128	   2296	  24996	   61a4	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+10:57:24 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-size   18650_UPS.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22572	    128	   2296	  24996	   61a4	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+11:00:56 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:143:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  143 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:147:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  147 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  22524	    128	   2296	  24948	   6174	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+11:02:20 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-size   18650_UPS.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22524	    128	   2296	  24948	   6174	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+11:02:36 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-size   18650_UPS.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22524	    128	   2296	  24948	   6174	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+11:03:57 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:143:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  143 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:147:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  147 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  22572	    128	   2296	  24996	   61a4	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+11:04:53 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:143:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  143 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:147:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  147 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  22428	    128	   2296	  24852	   6114	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+11:07:46 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:151:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  151 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:155:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  155 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  22468	    128	   2296	  24892	   613c	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+11:09:09 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:153:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  153 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:157:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  157 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  22468	    128	   2296	  24892	   613c	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+11:11:58 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:153:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  153 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:157:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  157 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  22428	    128	   2296	  24852	   6114	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+11:15:26 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:148:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  148 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:152:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  152 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  22476	    128	   2296	  24900	   6144	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+11:19:05 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:153:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  153 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:157:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  157 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  22516	    128	   2296	  24940	   616c	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+11:24:44 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-size   18650_UPS.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22516	    128	   2296	  24940	   616c	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+11:31:11 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  160 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:164:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  164 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  19920	    128	   2296	  22344	   5748	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+11:42:02 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:165:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  165 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:169:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  169 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  19960	    128	   2296	  22384	   5770	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+11:46:56 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:165:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  165 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:169:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  169 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  19908	    128	   2296	  22332	   573c	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+11:47:32 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:165:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  165 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:169:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  169 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  19960	    128	   2296	  22384	   5770	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+11:48:59 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:165:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  165 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:169:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  169 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  22556	    128	   2296	  24980	   6194	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+12:13:58 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c: In function 'HAL_Delay':
+../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c:387:1: warning: statement with no effect [-Wunused-value]
+  387 | 6  while((HAL_GetTick() - tickstart) < wait)
+      | ^
+../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c:387:2: error: expected ';' before 'while'
+  387 | 6  while((HAL_GetTick() - tickstart) < wait)
+      |  ^ ~~~~~
+      |  ;
+../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c:378:12: warning: unused variable 'tickstart' [-Wunused-variable]
+  378 |   uint32_t tickstart = HAL_GetTick();
+      |            ^~~~~~~~~
+make: *** [Drivers/STM32L1xx_HAL_Driver/Src/subdir.mk:64: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:165:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  165 |    sprintf(charBuffer, "%u mA\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:169:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  169 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+../Core/Src/main.c:165:34: warning: 'sprintf' writing a terminating nul past the end of the destination [-Wformat-overflow=]
+  165 |    sprintf(charBuffer, "%u mA\r\n", temp);
+      |                                  ^
+../Core/Src/main.c:165:4: note: 'sprintf' output between 7 and 11 bytes into a destination of size 6
+  165 |    sprintf(charBuffer, "%u mA\r\n", temp);
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+12:14:33 **** Clean-only build of configuration Debug for project 18650_UPS ****
+make -j12 clean 
+rm -rf  default.size.stdout  18650_UPS.list  18650_UPS.elf  ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o  ./Core/Startup/startup_stm32l151rctx.o  ./Core/Src/main.o ./Core/Src/ssd1306.o ./Core/Src/ssd1306_fonts.o ./Core/Src/ssd1306_tests.o ./Core/Src/stm32l1xx_hal_msp.o ./Core/Src/stm32l1xx_it.o ./Core/Src/syscalls.o ./Core/Src/sysmem.o ./Core/Src/system_stm32l1xx.o  ./Core/Startup/startup_stm32l151rctx.d  ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.d  ./Core/Src/main.d ./Core/Src/ssd1306.d ./Core/Src/ssd1306_fonts.d ./Core/Src/ssd1306_tests.d ./Core/Src/stm32l1xx_hal_msp.d ./Core/Src/stm32l1xx_it.d ./Core/Src/syscalls.d ./Core/Src/sysmem.d ./Core/Src/system_stm32l1xx.d  18650_UPS.bin  18650_UPS.elf
+ 
+12:14:34 **** Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o"
+../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c: In function 'HAL_Delay':
+../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c:387:1: warning: statement with no effect [-Wunused-value]
+  387 | 6  while((HAL_GetTick() - tickstart) < wait)
+      | ^
+../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c:387:2: error: expected ';' before 'while'
+  387 | 6  while((HAL_GetTick() - tickstart) < wait)
+      |  ^ ~~~~~
+      |  ;
+../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c:378:12: warning: unused variable 'tickstart' [-Wunused-variable]
+  378 |   uint32_t tickstart = HAL_GetTick();
+      |            ^~~~~~~~~
+make: *** [Drivers/STM32L1xx_HAL_Driver/Src/subdir.mk:64: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+12:14:47 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o"
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32l151rctx.d" -MT"Core/Startup/startup_stm32l151rctx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Startup/startup_stm32l151rctx.o" "../Core/Startup/startup_stm32l151rctx.s"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/ssd1306.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/ssd1306.d" -MT"Core/Src/ssd1306.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/ssd1306.o"
+arm-none-eabi-gcc "../Core/Src/ssd1306_fonts.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/ssd1306_fonts.d" -MT"Core/Src/ssd1306_fonts.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/ssd1306_fonts.o"
+arm-none-eabi-gcc "../Core/Src/ssd1306_tests.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/ssd1306_tests.d" -MT"Core/Src/ssd1306_tests.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/ssd1306_tests.o"
+arm-none-eabi-gcc "../Core/Src/stm32l1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l1xx_hal_msp.d" -MT"Core/Src/stm32l1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32l1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32l1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l1xx_it.d" -MT"Core/Src/stm32l1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32l1xx_it.o"
+../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c: In function 'HAL_Delay':
+../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c:387:1: warning: statement with no effect [-Wunused-value]
+  387 | 6  while((HAL_GetTick() - tickstart) < wait)
+      | ^
+../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c:387:2: error: expected ';' before 'while'
+  387 | 6  while((HAL_GetTick() - tickstart) < wait)
+      |  ^ ~~~~~
+      |  ;
+../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c:378:12: warning: unused variable 'tickstart' [-Wunused-variable]
+  378 |   uint32_t tickstart = HAL_GetTick();
+      |            ^~~~~~~~~
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
+make: *** [Drivers/STM32L1xx_HAL_Driver/Src/subdir.mk:64: Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h:31,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h:29,
+                 from ../Core/Inc/stm32l1xx_hal_conf.h:197,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h:30,
+                 from ../Core/Inc/ssd1306.h:17,
+                 from ../Core/Src/ssd1306.c:1:
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:622: warning: "GPIO_SPEED_LOW" redefined
+  622 | #define  GPIO_SPEED_LOW    GPIO_SPEED_FREQ_LOW
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:616: note: this is the location of the previous definition
+  616 | #define  GPIO_SPEED_LOW         GPIO_SPEED_FREQ_MEDIUM
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:623: warning: "GPIO_SPEED_MEDIUM" redefined
+  623 | #define  GPIO_SPEED_MEDIUM GPIO_SPEED_FREQ_MEDIUM
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:617: note: this is the location of the previous definition
+  617 | #define  GPIO_SPEED_MEDIUM      GPIO_SPEED_FREQ_HIGH
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:624: warning: "GPIO_SPEED_HIGH" redefined
+  624 | #define  GPIO_SPEED_HIGH   GPIO_SPEED_FREQ_HIGH
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:618: note: this is the location of the previous definition
+  618 | #define  GPIO_SPEED_HIGH        GPIO_SPEED_FREQ_VERY_HIGH
+      | 
+In file included from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h:31,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h:29,
+                 from ../Core/Inc/stm32l1xx_hal_conf.h:197,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h:30,
+                 from ../Core/Inc/ssd1306.h:17,
+                 from ../Core/Src/ssd1306_tests.c:3:
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:622: warning: "GPIO_SPEED_LOW" redefined
+  622 | #define  GPIO_SPEED_LOW    GPIO_SPEED_FREQ_LOW
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:616: note: this is the location of the previous definition
+  616 | #define  GPIO_SPEED_LOW         GPIO_SPEED_FREQ_MEDIUM
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:623: warning: "GPIO_SPEED_MEDIUM" redefined
+  623 | #define  GPIO_SPEED_MEDIUM GPIO_SPEED_FREQ_MEDIUM
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:617: note: this is the location of the previous definition
+  617 | #define  GPIO_SPEED_MEDIUM      GPIO_SPEED_FREQ_HIGH
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:624: warning: "GPIO_SPEED_HIGH" redefined
+  624 | #define  GPIO_SPEED_HIGH   GPIO_SPEED_FREQ_HIGH
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:618: note: this is the location of the previous definition
+  618 | #define  GPIO_SPEED_HIGH        GPIO_SPEED_FREQ_VERY_HIGH
+      | 
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:165:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  165 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:169:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  169 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+12:15:16 **** Clean-only build of configuration Debug for project 18650_UPS ****
+make -j12 clean 
+rm -rf  default.size.stdout  18650_UPS.list  18650_UPS.elf  ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o  ./Core/Startup/startup_stm32l151rctx.o  ./Core/Src/main.o ./Core/Src/ssd1306.o ./Core/Src/ssd1306_fonts.o ./Core/Src/ssd1306_tests.o ./Core/Src/stm32l1xx_hal_msp.o ./Core/Src/stm32l1xx_it.o ./Core/Src/syscalls.o ./Core/Src/sysmem.o ./Core/Src/system_stm32l1xx.o  ./Core/Startup/startup_stm32l151rctx.d  ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.d  ./Core/Src/main.d ./Core/Src/ssd1306.d ./Core/Src/ssd1306_fonts.d ./Core/Src/ssd1306_tests.d ./Core/Src/stm32l1xx_hal_msp.d ./Core/Src/stm32l1xx_it.d ./Core/Src/syscalls.d ./Core/Src/sysmem.d ./Core/Src/system_stm32l1xx.d  18650_UPS.bin  18650_UPS.elf
+ 
+12:15:17 **** Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o"
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32l151rctx.d" -MT"Core/Startup/startup_stm32l151rctx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Startup/startup_stm32l151rctx.o" "../Core/Startup/startup_stm32l151rctx.s"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/ssd1306.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/ssd1306.d" -MT"Core/Src/ssd1306.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/ssd1306.o"
+arm-none-eabi-gcc "../Core/Src/ssd1306_fonts.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/ssd1306_fonts.d" -MT"Core/Src/ssd1306_fonts.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/ssd1306_fonts.o"
+arm-none-eabi-gcc "../Core/Src/ssd1306_tests.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/ssd1306_tests.d" -MT"Core/Src/ssd1306_tests.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/ssd1306_tests.o"
+arm-none-eabi-gcc "../Core/Src/stm32l1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l1xx_hal_msp.d" -MT"Core/Src/stm32l1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32l1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32l1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l1xx_it.d" -MT"Core/Src/stm32l1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32l1xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
+In file included from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h:31,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h:29,
+                 from ../Core/Inc/stm32l1xx_hal_conf.h:197,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h:30,
+                 from ../Core/Inc/ssd1306.h:17,
+                 from ../Core/Src/ssd1306.c:1:
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:622: warning: "GPIO_SPEED_LOW" redefined
+  622 | #define  GPIO_SPEED_LOW    GPIO_SPEED_FREQ_LOW
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:616: note: this is the location of the previous definition
+  616 | #define  GPIO_SPEED_LOW         GPIO_SPEED_FREQ_MEDIUM
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:623: warning: "GPIO_SPEED_MEDIUM" redefined
+  623 | #define  GPIO_SPEED_MEDIUM GPIO_SPEED_FREQ_MEDIUM
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:617: note: this is the location of the previous definition
+  617 | #define  GPIO_SPEED_MEDIUM      GPIO_SPEED_FREQ_HIGH
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:624: warning: "GPIO_SPEED_HIGH" redefined
+  624 | #define  GPIO_SPEED_HIGH   GPIO_SPEED_FREQ_HIGH
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:618: note: this is the location of the previous definition
+  618 | #define  GPIO_SPEED_HIGH        GPIO_SPEED_FREQ_VERY_HIGH
+      | 
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:165:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  165 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:169:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  169 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+In file included from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h:31,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h:29,
+                 from ../Core/Inc/stm32l1xx_hal_conf.h:197,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h:30,
+                 from ../Core/Inc/ssd1306.h:17,
+                 from ../Core/Src/ssd1306_tests.c:3:
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:622: warning: "GPIO_SPEED_LOW" redefined
+  622 | #define  GPIO_SPEED_LOW    GPIO_SPEED_FREQ_LOW
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:616: note: this is the location of the previous definition
+  616 | #define  GPIO_SPEED_LOW         GPIO_SPEED_FREQ_MEDIUM
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:623: warning: "GPIO_SPEED_MEDIUM" redefined
+  623 | #define  GPIO_SPEED_MEDIUM GPIO_SPEED_FREQ_MEDIUM
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:617: note: this is the location of the previous definition
+  617 | #define  GPIO_SPEED_MEDIUM      GPIO_SPEED_FREQ_HIGH
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:624: warning: "GPIO_SPEED_HIGH" redefined
+  624 | #define  GPIO_SPEED_HIGH   GPIO_SPEED_FREQ_HIGH
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:618: note: this is the location of the previous definition
+  618 | #define  GPIO_SPEED_HIGH        GPIO_SPEED_FREQ_VERY_HIGH
+      | 
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32l1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32l1xx.d" -MT"Core/Src/system_stm32l1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32l1xx.o"
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  22556	    128	   2296	  24980	   6194	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+12:15:44 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:165:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  165 |    sprintf(charBuffer, "%u mA\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:169:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  169 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+../Core/Src/main.c:165:34: warning: 'sprintf' writing a terminating nul past the end of the destination [-Wformat-overflow=]
+  165 |    sprintf(charBuffer, "%u mA\r\n", temp);
+      |                                  ^
+../Core/Src/main.c:165:4: note: 'sprintf' output between 7 and 11 bytes into a destination of size 6
+  165 |    sprintf(charBuffer, "%u mA\r\n", temp);
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  22556	    128	   2296	  24980	   6194	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+12:16:31 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:165:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  165 |    sprintf(charBuffer, "%u mA\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:169:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  169 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  22556	    128	   2304	  24988	   619c	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+14:25:35 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o"
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32l151rctx.d" -MT"Core/Startup/startup_stm32l151rctx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Startup/startup_stm32l151rctx.o" "../Core/Startup/startup_stm32l151rctx.s"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/ssd1306.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/ssd1306.d" -MT"Core/Src/ssd1306.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/ssd1306.o"
+arm-none-eabi-gcc "../Core/Src/ssd1306_fonts.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/ssd1306_fonts.d" -MT"Core/Src/ssd1306_fonts.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/ssd1306_fonts.o"
+arm-none-eabi-gcc "../Core/Src/ssd1306_tests.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/ssd1306_tests.d" -MT"Core/Src/ssd1306_tests.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/ssd1306_tests.o"
+arm-none-eabi-gcc "../Core/Src/stm32l1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l1xx_hal_msp.d" -MT"Core/Src/stm32l1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32l1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32l1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l1xx_it.d" -MT"Core/Src/stm32l1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32l1xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
+In file included from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h:31,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h:29,
+                 from ../Core/Inc/stm32l1xx_hal_conf.h:197,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h:30,
+                 from ../Core/Inc/ssd1306.h:17,
+                 from ../Core/Src/ssd1306.c:1:
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:622: warning: "GPIO_SPEED_LOW" redefined
+  622 | #define  GPIO_SPEED_LOW    GPIO_SPEED_FREQ_LOW
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:616: note: this is the location of the previous definition
+  616 | #define  GPIO_SPEED_LOW         GPIO_SPEED_FREQ_MEDIUM
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:623: warning: "GPIO_SPEED_MEDIUM" redefined
+  623 | #define  GPIO_SPEED_MEDIUM GPIO_SPEED_FREQ_MEDIUM
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:617: note: this is the location of the previous definition
+  617 | #define  GPIO_SPEED_MEDIUM      GPIO_SPEED_FREQ_HIGH
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:624: warning: "GPIO_SPEED_HIGH" redefined
+  624 | #define  GPIO_SPEED_HIGH   GPIO_SPEED_FREQ_HIGH
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:618: note: this is the location of the previous definition
+  618 | #define  GPIO_SPEED_HIGH        GPIO_SPEED_FREQ_VERY_HIGH
+      | 
+In file included from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h:31,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h:29,
+                 from ../Core/Inc/stm32l1xx_hal_conf.h:197,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h:30,
+                 from ../Core/Inc/ssd1306.h:17,
+                 from ../Core/Src/ssd1306_tests.c:3:
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:622: warning: "GPIO_SPEED_LOW" redefined
+  622 | #define  GPIO_SPEED_LOW    GPIO_SPEED_FREQ_LOW
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:616: note: this is the location of the previous definition
+  616 | #define  GPIO_SPEED_LOW         GPIO_SPEED_FREQ_MEDIUM
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:623: warning: "GPIO_SPEED_MEDIUM" redefined
+  623 | #define  GPIO_SPEED_MEDIUM GPIO_SPEED_FREQ_MEDIUM
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:617: note: this is the location of the previous definition
+  617 | #define  GPIO_SPEED_MEDIUM      GPIO_SPEED_FREQ_HIGH
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:624: warning: "GPIO_SPEED_HIGH" redefined
+  624 | #define  GPIO_SPEED_HIGH   GPIO_SPEED_FREQ_HIGH
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:618: note: this is the location of the previous definition
+  618 | #define  GPIO_SPEED_HIGH        GPIO_SPEED_FREQ_VERY_HIGH
+      | 
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:154:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  154 |    sprintf(charBuffer, "%u mA\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:158:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  158 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+../Core/Src/main.c:161:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  161 |    sprintf(charBuffer,"%u\r\n", read_state);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:165:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  165 |    ssd1306_WriteString(&charBuffer, Font_11x18, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:415:26: error: 'htim1' undeclared (first use in this function); did you mean 'htim'?
+  415 |    HAL_TIM_Base_Stop_IT(&htim1);
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sysmem.o"
+      |                          ^~~~~
+      |                          htim
+../Core/Src/main.c:415:26: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+14:25:52 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32l1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32l1xx.d" -MT"Core/Src/system_stm32l1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32l1xx.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:154:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  154 |    sprintf(charBuffer, "%u mA\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:158:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  158 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+../Core/Src/main.c:161:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  161 |    sprintf(charBuffer,"%u\r\n", read_state);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:165:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  165 |    ssd1306_WriteString(&charBuffer, Font_11x18, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  28956	    136	   2368	  31460	   7ae4	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+14:26:30 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:154:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  154 |    sprintf(charBuffer, "%u mA\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:158:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  158 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+../Core/Src/main.c:161:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  161 |    sprintf(charBuffer,"%u\r\n", read_state);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:165:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  165 |    ssd1306_WriteString(&charBuffer, Font_11x18, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  28948	    136	   2368	  31452	   7adc	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+14:26:55 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-size   18650_UPS.elf 
+   text	   data	    bss	    dec	    hex	filename
+  28948	    136	   2368	  31452	   7adc	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+14:27:31 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:154:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  154 |    sprintf(charBuffer, "%u mA\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:158:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  158 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+../Core/Src/main.c:161:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  161 |    sprintf(charBuffer,"%u\r\n", read_state);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:165:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  165 |    ssd1306_WriteString(&charBuffer, Font_11x18, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  28940	    136	   2368	  31444	   7ad4	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+14:28:29 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:154:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  154 |    sprintf(charBuffer, "%u mA\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:158:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  158 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+../Core/Src/main.c:161:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  161 |    sprintf(charBuffer,"%u\r\n", read_state);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:165:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  165 |    ssd1306_WriteString(&charBuffer, Font_11x18, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  28952	    136	   2368	  31456	   7ae0	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+14:32:45 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:157:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  157 |    sprintf(charBuffer, "%u mA\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:161:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  161 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+../Core/Src/main.c:164:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  164 |    sprintf(charBuffer,"%u\r\n", read_state);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:168:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  168 |    ssd1306_WriteString(&charBuffer, Font_11x18, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  29000	    136	   2368	  31504	   7b10	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+14:33:24 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:157:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  157 |    sprintf(charBuffer, "%u mA\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:161:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  161 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+../Core/Src/main.c:164:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  164 |    sprintf(charBuffer,"%u\r\n", read_state);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:168:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  168 |    ssd1306_WriteString(&charBuffer, Font_11x18, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  29000	    136	   2368	  31504	   7b10	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+14:39:48 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:158:12: error: expected ':' before ';' token
+  158 |     default;
+      |            ^
+      |            :
+../Core/Src/main.c:159:8: error: 'read_stat' undeclared (first use in this function); did you mean 'read_state'?
+  159 |        read_stat = 0;
+      |        ^~~~~~~~~
+      |        read_state
+../Core/Src/main.c:159:8: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:163:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  163 |    sprintf(charBuffer, "%u mA\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:167:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  167 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+../Core/Src/main.c:170:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  170 |    sprintf(charBuffer,"%u\r\n", read_state);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:174:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  174 |    ssd1306_WriteString(&charBuffer, Font_11x18, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+14:39:55 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:158:12: error: expected ':' before ';' token
+  158 |     default;
+      |            ^
+      |            :
+../Core/Src/main.c:163:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  163 |    sprintf(charBuffer, "%u mA\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:167:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  167 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+../Core/Src/main.c:170:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  170 |    sprintf(charBuffer,"%u\r\n", read_state);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:174:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  174 |    ssd1306_WriteString(&charBuffer, Font_11x18, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+14:40:02 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:163:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  163 |    sprintf(charBuffer, "%u mA\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:167:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  167 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+../Core/Src/main.c:170:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  170 |    sprintf(charBuffer,"%u\r\n", read_state);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:174:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  174 |    ssd1306_WriteString(&charBuffer, Font_11x18, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  29088	    136	   2368	  31592	   7b68	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+14:42:08 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:150:14: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  150 |      sprintf(charBuffer, "%u mA\r\n", temp);
+      |              ^~~~~~~~~~
+      |              |
+      |              uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:156:14: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  156 |      sprintf(charBuffer, "%u uV\r\n", temp);
+      |              ^~~~~~~~~~
+      |              |
+      |              uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:169:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  169 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+../Core/Src/main.c:172:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  172 |    sprintf(charBuffer,"%u\r\n", read_state);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:176:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  176 |    ssd1306_WriteString(&charBuffer, Font_11x18, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  29152	    136	   2368	  31656	   7ba8	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+14:50:35 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:150:14: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  150 |      sprintf(charBuffer, "%u mA\r\n", temp);
+      |              ^~~~~~~~~~
+      |              |
+      |              uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:156:14: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  156 |      sprintf(charBuffer, "%u uV\r\n", temp);
+      |              ^~~~~~~~~~
+      |              |
+      |              uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:169:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  169 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+../Core/Src/main.c:172:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  172 |    sprintf(charBuffer,"%u\r\n", read_state);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:176:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  176 |    ssd1306_WriteString(&charBuffer, Font_11x18, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[10] {aka unsigned char (*)[10]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[10]' {aka 'unsigned char (*)[10]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  29188	    136	   2368	  31692	   7bcc	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+14:50:44 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-size   18650_UPS.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29188	    136	   2368	  31692	   7bcc	18650_UPS.elf
+Finished building: default.size.stdout
+ 
