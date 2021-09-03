@@ -59,7 +59,9 @@ uint8_t state_SW_D = 0;
 uint8_t state_SW_L = 0;
 uint8_t state_SW_R = 0;
 
-volatile uint8_t setting_state = 0;
+volatile uint8_t contrast = 0xFF;
+volatile uint8_t charge_enable = 1;
+volatile uint8_t usb_version = 2;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -110,7 +112,6 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   ssd1306_Init();
-  //ssd1306_SetContrast(0x05); //enable to save 3mA
 
   //resetting ina237
   TxBuffer[0] = 0x80;
@@ -127,12 +128,27 @@ int main(void)
   TxBuffer[1] = 0xD0;
   HAL_I2C_Mem_Write(&hi2c1, 0x45<<1, 0x02, 1, TxBuffer, sizeof(TxBuffer), 1000);
 
-  //read adc_config
+  //adc_config
   HAL_I2C_Mem_Read(&hi2c1, 0x45<<1, 0x01, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
   temp = (aRxBuffer[0]<<8) | aRxBuffer[1];
   TxBuffer[0] = aRxBuffer[0];
   TxBuffer[1] = aRxBuffer[1] | 0x05;
   HAL_I2C_Mem_Write(&hi2c1, 0x45<<1, 0x01, 1, TxBuffer, sizeof(TxBuffer), 1000);
+
+  //charge config default
+  HAL_I2C_Mem_Read(&hi2c1, 0x09<<1, 0x01, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
+  TxBuffer[0] = 0b00000100; 	//charge enable and UVLO 2.8V
+  TxBuffer[1] = 0x00;
+  HAL_I2C_Mem_Write(&hi2c1, 0x09<<1, 0x01, 1, TxBuffer, 1, 1000);
+  HAL_I2C_Mem_Read(&hi2c1, 0x09<<1, 0x01, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
+
+  //setting initial charge curretn to usb 2 compliant
+  TxBuffer[0] = 0b01001011;
+  TxBuffer[1] = 0x00;
+  HAL_I2C_Mem_Write(&hi2c1, 0x09<<1, 0x00, 1, TxBuffer, 1, 1000);
+  TxBuffer[0] = 0b00001110;
+  TxBuffer[1] = 0x00;
+  HAL_I2C_Mem_Write(&hi2c1, 0x09<<1, 0x02, 1, TxBuffer, 1, 1000);
 
   /* USER CODE END 2 */
 
@@ -150,56 +166,65 @@ int main(void)
 			  //current
 			  HAL_I2C_Mem_Read(&hi2c1, 0x45<<1, 0x07, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
 			  temp = 0.0610352*(float)((aRxBuffer[0]<<8) | aRxBuffer[1]);
-			  sprintf(charBuffer, "%u mA\r\n", temp);
+			  sprintf(charBuffer, "%u mA", temp);
 	  		  break;
 	  	  case 1:
-			  //vshunt
-			  HAL_I2C_Mem_Read(&hi2c1, 0x45<<1, 0x04, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
-			  temp = 1.25*(float)((aRxBuffer[0]<<8) | aRxBuffer[1]);
-			  sprintf(charBuffer, "%u uV\r\n", temp);
-	  		  break;
-	  	  case 2:
 	  		  //vbus
 			  HAL_I2C_Mem_Read(&hi2c1, 0x45<<1, 0x05, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
 			  temp = 3.125*(float)((aRxBuffer[0]<<8) | aRxBuffer[1]);
-			  sprintf(charBuffer, "%u mV\r\n", temp);
+			  sprintf(charBuffer, "%u mV", temp);
 	  		  break;
-	  	  case 3:
+	  	  case 2:
 			  //dietemp
 			  HAL_I2C_Mem_Read(&hi2c1, 0x45<<1, 0x06, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
 			  temp = 0.125*(float)((aRxBuffer[0]<<8) | aRxBuffer[1]);
 			  temp = temp>>4;
-			  sprintf(charBuffer, "%u C\r\n", temp);
+			  sprintf(charBuffer, "%u C", temp);
 			  break;
-	  	  case 4:
+	  	  case 3:
 			  //power
 			  HAL_I2C_Mem_Read(&hi2c1, 0x45<<1, 0x08, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
 			  temp = 0.2*0.0610352*(float)((aRxBuffer[0]<<16) | aRxBuffer[1]<<8 | aRxBuffer[0]);
-			  sprintf(charBuffer, "%u mW\r\n", temp);
+			  sprintf(charBuffer, "%u mW", temp);
 			  break;
-	  	  case 5:
+	  	  case 4:
 			  //charge status
 			  HAL_I2C_Mem_Read(&hi2c1, 0x09<<1, 0x07, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
 			  temp = (aRxBuffer[0] & 0b00011000)>>3;
 			  switch (temp) {
 				  case 0:
-					  sprintf(charBuffer, "No Chrg", temp);
+					  sprintf(charBuffer, "No Chrg");
 					  break;
 				  case 1:
-					  sprintf(charBuffer, "Pre Chrg", temp);
+					  sprintf(charBuffer, "Pre Chrg");
 					  break;
 				  case 2:
-					  sprintf(charBuffer, "Charging", temp);
+					  sprintf(charBuffer, "Charging");
 					  break;
 				  case 3:
-					  sprintf(charBuffer, "Done!", temp);
+					  sprintf(charBuffer, "Done!");
 					  break;
 				  default:
 					  break;
 			  }
 			  break;
-			  case 6:
-				  break;
+		  case 5:
+			  sprintf(charBuffer, "Contrast");
+			  break;
+		  case 6:
+			  if (usb_version == 2) {
+				  sprintf(charBuffer, "USB 0.5A");
+			  } else if (usb_version == 3) {
+				  sprintf(charBuffer, "USB 1A");
+			  }
+			  break;
+		  case 7:
+			  if (charge_enable == 0) {
+				  sprintf(charBuffer, "Chrg Dis");
+			  } else if (charge_enable == 1) {
+				  sprintf(charBuffer, "Chrg En");
+			  }
+		  	  break;
 	  	  default:
 		  	  break;
 	  }
@@ -210,13 +235,6 @@ int main(void)
 	  ssd1306_SetCursor(0, 0);
 	  ssd1306_WriteString(&charBuffer, Font_16x26, White);
 	  ssd1306_UpdateScreen();
-
-	  //sprintf(charBuffer,"%u\r\n", read_state);
-
-	  //ssd1306_Fill(Black);
-	  //ssd1306_SetCursor(96, 0);
-	  //ssd1306_WriteString(&charBuffer, Font_11x18, White);
-	  //ssd1306_UpdateScreen();
 
 	  HAL_Delay(100);
   }
@@ -430,7 +448,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		 state_SW_U = 0;
 		 HAL_TIM_Base_Stop_IT(&htim2);
 
-		 if (read_state == 5) {
+		 if (read_state == 7) {
 			 read_state = 0;
 		 } else {
 			 read_state++;
@@ -441,7 +459,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		 HAL_TIM_Base_Stop_IT(&htim2);
 
 		 if (read_state == 0) {
-			 read_state = 5;
+			 read_state = 7;
 		 } else {
 			 read_state--;
 		 }
@@ -450,13 +468,74 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		 state_SW_L = 0;
 		 HAL_TIM_Base_Stop_IT(&htim2);
 
+		 switch (read_state) {
+		 	 case 5:
+		 		 if (contrast > 0x3f) {
+		 			 contrast = contrast-64;
+		 		 	 ssd1306_SetContrast(contrast);
+		 		 } else if (contrast == 0x3f) {
+		 			 contrast = contrast-63;
+		 			 ssd1306_SetContrast(contrast);
+		 		 }
+		 		 break;
+		 	 case 6:
+		 		 usb_version = 2;
+		 		 TxBuffer[0] = 0b01001011;
+				 TxBuffer[1] = 0x00;
+				 HAL_I2C_Mem_Write(&hi2c1, 0x09<<1, 0x00, 1, TxBuffer, 1, 1000);
+				 TxBuffer[0] = 0b00001110;
+				 TxBuffer[1] = 0x00;
+				 HAL_I2C_Mem_Write(&hi2c1, 0x09<<1, 0x02, 1, TxBuffer, 1, 1000);
+		 		 break;
+		 	 case 7:
+		 		 charge_enable = 0;
+
+		 		 HAL_I2C_Mem_Read(&hi2c1, 0x09<<1, 0x01, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
+		 		 TxBuffer[0] = aRxBuffer[0] | 0b00001000;
+		 		 TxBuffer[1] = 0x00;
+		 		 HAL_I2C_Mem_Write(&hi2c1, 0x09<<1, 0x01, 1, TxBuffer, 1, 1000);
+		 		 HAL_I2C_Mem_Read(&hi2c1, 0x09<<1, 0x01, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
+		 		 break;
+		 	 default:
+		 		 break;
+		 }
+
 
 	 }
 	 if (state_SW_R == 1 && HAL_GPIO_ReadPin(SW_R_GPIO_Port, SW_R_Pin) == GPIO_PIN_RESET) {
 		 state_SW_R = 0;
 		 HAL_TIM_Base_Stop_IT(&htim2);
 
-
+		 switch (read_state) {
+		 	 case 5:
+		 		 if (contrast == 0x00) {
+		 			 contrast = contrast+63;
+		 		 	 ssd1306_SetContrast(contrast);
+		 		 } else if (contrast > 0 && contrast < 0xFF) {
+		 			 contrast = contrast+64;
+					 ssd1306_SetContrast(contrast);
+		 		 }
+		 		 break;
+		 	 case 6:
+		 		 usb_version = 3;
+		 		 TxBuffer[0] = 0b01001111;
+				 TxBuffer[1] = 0x00;
+				 HAL_I2C_Mem_Write(&hi2c1, 0x09<<1, 0x00, 1, TxBuffer, 1, 1000);
+				 TxBuffer[0] = 0b00011100;
+				 TxBuffer[1] = 0x00;
+				 HAL_I2C_Mem_Write(&hi2c1, 0x09<<1, 0x02, 1, TxBuffer, 1, 1000);
+		 		 break;
+		 	 case 7:
+		 		 charge_enable = 1;
+		 		 HAL_I2C_Mem_Read(&hi2c1, 0x09<<1, 0x01, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
+				 TxBuffer[0] = aRxBuffer[0] & 0b11110111;
+				 TxBuffer[1] = 0x00;
+				 HAL_I2C_Mem_Write(&hi2c1, 0x09<<1, 0x01, 1, TxBuffer, 1, 1000);
+				 HAL_I2C_Mem_Read(&hi2c1, 0x09<<1, 0x01, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
+		 		 break;
+		 	 default:
+		 		 break;
+		 }
 	 }
   }
 }
