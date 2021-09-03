@@ -30,3 +30,16 @@ fp-info-cache
 
 # Replicate Layout Log File
 replicate_layout.log
+
+.metadata/
+.settings/
+Debug/
+
+RemoteSystemsTempFiles
+*language.settings.xml
+
+*.launch
+
+
+*.cfg
+.mxproject
