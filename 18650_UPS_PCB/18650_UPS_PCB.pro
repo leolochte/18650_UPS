@@ -1,4 +1,4 @@
-update=01/08/2021 08:25:39
+update=03/09/2021 09:52:10
 version=1
 last_client=kicad
 [general]
@@ -246,7 +246,7 @@ dPairViaGap=0.25
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
-PlotDirectoryName=C:/Users/Leo/Desktop/
+PlotDirectoryName=../18650_UPS_TOP/
 SubpartIdSeparator=0
 SubpartFirstId=65
 NetFmtName=

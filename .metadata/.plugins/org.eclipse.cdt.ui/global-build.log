@@ -1,0 +1,360 @@
+09:59:50 **** Clean-only build of configuration Debug for project 18650_UPS ****
+make -j12 clean 
+rm -rf  default.size.stdout  uqwherfiuhqawief.list  uqwherfiuhqawief.elf  ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o  ./Core/Startup/startup_stm32l151rctx.o  ./Core/Src/main.o ./Core/Src/ssd1306.o ./Core/Src/ssd1306_fonts.o ./Core/Src/ssd1306_tests.o ./Core/Src/stm32l1xx_hal_msp.o ./Core/Src/stm32l1xx_it.o ./Core/Src/syscalls.o ./Core/Src/sysmem.o ./Core/Src/system_stm32l1xx.o  ./Core/Startup/startup_stm32l151rctx.d  ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.d  ./Core/Src/main.d ./Core/Src/ssd1306.d ./Core/Src/ssd1306_fonts.d ./Core/Src/ssd1306_tests.d ./Core/Src/stm32l1xx_hal_msp.d ./Core/Src/stm32l1xx_it.d ./Core/Src/syscalls.d ./Core/Src/sysmem.d ./Core/Src/system_stm32l1xx.d  uqwherfiuhqawief.bin  uqwherfiuhqawief.elf
+ 
+09:59:50 **** Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o"
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32l151rctx.d" -MT"Core/Startup/startup_stm32l151rctx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Startup/startup_stm32l151rctx.o" "../Core/Startup/startup_stm32l151rctx.s"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/ssd1306.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/ssd1306.d" -MT"Core/Src/ssd1306.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/ssd1306.o"
+arm-none-eabi-gcc "../Core/Src/ssd1306_fonts.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/ssd1306_fonts.d" -MT"Core/Src/ssd1306_fonts.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/ssd1306_fonts.o"
+arm-none-eabi-gcc "../Core/Src/ssd1306_tests.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/ssd1306_tests.d" -MT"Core/Src/ssd1306_tests.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/ssd1306_tests.o"
+arm-none-eabi-gcc "../Core/Src/stm32l1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l1xx_hal_msp.d" -MT"Core/Src/stm32l1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32l1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32l1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l1xx_it.d" -MT"Core/Src/stm32l1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32l1xx_it.o"
+In file included from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h:31,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h:29,
+                 from ../Core/Inc/stm32l1xx_hal_conf.h:197,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h:30,
+                 from ../Core/Inc/ssd1306.h:17,
+                 from ../Core/Src/ssd1306.c:1:
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:622: warning: "GPIO_SPEED_LOW" redefined
+  622 | #define  GPIO_SPEED_LOW    GPIO_SPEED_FREQ_LOW
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:616: note: this is the location of the previous definition
+  616 | #define  GPIO_SPEED_LOW         GPIO_SPEED_FREQ_MEDIUM
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:623: warning: "GPIO_SPEED_MEDIUM" redefined
+  623 | #define  GPIO_SPEED_MEDIUM GPIO_SPEED_FREQ_MEDIUM
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:617: note: this is the location of the previous definition
+  617 | #define  GPIO_SPEED_MEDIUM      GPIO_SPEED_FREQ_HIGH
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:624: warning: "GPIO_SPEED_HIGH" redefined
+  624 | #define  GPIO_SPEED_HIGH   GPIO_SPEED_FREQ_HIGH
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:618: note: this is the location of the previous definition
+  618 | #define  GPIO_SPEED_HIGH        GPIO_SPEED_FREQ_VERY_HIGH
+      | 
+In file included from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h:31,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h:29,
+                 from ../Core/Inc/stm32l1xx_hal_conf.h:197,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h:30,
+                 from ../Core/Inc/ssd1306.h:17,
+                 from ../Core/Src/ssd1306_tests.c:3:
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:622: warning: "GPIO_SPEED_LOW" redefined
+  622 | #define  GPIO_SPEED_LOW    GPIO_SPEED_FREQ_LOW
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:616: note: this is the location of the previous definition
+  616 | #define  GPIO_SPEED_LOW         GPIO_SPEED_FREQ_MEDIUM
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:623: warning: "GPIO_SPEED_MEDIUM" redefined
+  623 | #define  GPIO_SPEED_MEDIUM GPIO_SPEED_FREQ_MEDIUM
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:617: note: this is the location of the previous definition
+  617 | #define  GPIO_SPEED_MEDIUM      GPIO_SPEED_FREQ_HIGH
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:624: warning: "GPIO_SPEED_HIGH" redefined
+  624 | #define  GPIO_SPEED_HIGH   GPIO_SPEED_FREQ_HIGH
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:618: note: this is the location of the previous definition
+  618 | #define  GPIO_SPEED_HIGH        GPIO_SPEED_FREQ_VERY_HIGH
+      | 
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:114:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  114 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:116:31: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+  116 |    HAL_UART_Transmit(&huart1, &charBuffer, 6, 500);
+      |                               ^~~~~~~~~~~
+      |                               |
+      |                               uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Inc/stm32l1xx_hal_conf.h:285,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h:721:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  721 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+../Core/Src/main.c:120:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  120 |    ssd1306_WriteString(&charBuffer, Font_11x18, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32l1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32l1xx.d" -MT"Core/Src/system_stm32l1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32l1xx.o"
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  21316	    128	   2296	  23740	   5cbc	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.list
+ 
+Finished building: 18650_UPS.bin
+ 
+10:00:27 **** Clean-only build of configuration Debug for project 18650_UPS ****
+make -j12 clean 
+rm -rf  default.size.stdout  18650_UPS.list  18650_UPS.elf  ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.o ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o  ./Core/Startup/startup_stm32l151rctx.o  ./Core/Src/main.o ./Core/Src/ssd1306.o ./Core/Src/ssd1306_fonts.o ./Core/Src/ssd1306_tests.o ./Core/Src/stm32l1xx_hal_msp.o ./Core/Src/stm32l1xx_it.o ./Core/Src/syscalls.o ./Core/Src/sysmem.o ./Core/Src/system_stm32l1xx.o  ./Core/Startup/startup_stm32l151rctx.d  ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.d ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.d  ./Core/Src/main.d ./Core/Src/ssd1306.d ./Core/Src/ssd1306_fonts.d ./Core/Src/ssd1306_tests.d ./Core/Src/stm32l1xx_hal_msp.d ./Core/Src/stm32l1xx_it.d ./Core/Src/syscalls.d ./Core/Src/sysmem.d ./Core/Src/system_stm32l1xx.d  18650_UPS.bin  18650_UPS.elf
+ 
+10:00:27 **** Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o"
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32l151rctx.d" -MT"Core/Startup/startup_stm32l151rctx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Startup/startup_stm32l151rctx.o" "../Core/Startup/startup_stm32l151rctx.s"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/ssd1306.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/ssd1306.d" -MT"Core/Src/ssd1306.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/ssd1306.o"
+arm-none-eabi-gcc "../Core/Src/ssd1306_fonts.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/ssd1306_fonts.d" -MT"Core/Src/ssd1306_fonts.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/ssd1306_fonts.o"
+arm-none-eabi-gcc "../Core/Src/ssd1306_tests.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/ssd1306_tests.d" -MT"Core/Src/ssd1306_tests.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/ssd1306_tests.o"
+arm-none-eabi-gcc "../Core/Src/stm32l1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l1xx_hal_msp.d" -MT"Core/Src/stm32l1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32l1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32l1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l1xx_it.d" -MT"Core/Src/stm32l1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32l1xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:114:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  114 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:116:31: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+  116 |    HAL_UART_Transmit(&huart1, &charBuffer, 6, 500);
+      |                               ^~~~~~~~~~~
+      |                               |
+      |                               uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Inc/stm32l1xx_hal_conf.h:285,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h:721:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  721 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+../Core/Src/main.c:120:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  120 |    ssd1306_WriteString(&charBuffer, Font_11x18, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+In file included from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h:31,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h:29,
+                 from ../Core/Inc/stm32l1xx_hal_conf.h:197,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h:30,
+                 from ../Core/Inc/ssd1306.h:17,
+                 from ../Core/Src/ssd1306.c:1:
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:622: warning: "GPIO_SPEED_LOW" redefined
+  622 | #define  GPIO_SPEED_LOW    GPIO_SPEED_FREQ_LOW
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:616: note: this is the location of the previous definition
+  616 | #define  GPIO_SPEED_LOW         GPIO_SPEED_FREQ_MEDIUM
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:623: warning: "GPIO_SPEED_MEDIUM" redefined
+  623 | #define  GPIO_SPEED_MEDIUM GPIO_SPEED_FREQ_MEDIUM
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:617: note: this is the location of the previous definition
+  617 | #define  GPIO_SPEED_MEDIUM      GPIO_SPEED_FREQ_HIGH
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:624: warning: "GPIO_SPEED_HIGH" redefined
+  624 | #define  GPIO_SPEED_HIGH   GPIO_SPEED_FREQ_HIGH
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:618: note: this is the location of the previous definition
+  618 | #define  GPIO_SPEED_HIGH        GPIO_SPEED_FREQ_VERY_HIGH
+      | 
+In file included from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h:31,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h:29,
+                 from ../Core/Inc/stm32l1xx_hal_conf.h:197,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h:30,
+                 from ../Core/Inc/ssd1306.h:17,
+                 from ../Core/Src/ssd1306_tests.c:3:
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:622: warning: "GPIO_SPEED_LOW" redefined
+  622 | #define  GPIO_SPEED_LOW    GPIO_SPEED_FREQ_LOW
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:616: note: this is the location of the previous definition
+  616 | #define  GPIO_SPEED_LOW         GPIO_SPEED_FREQ_MEDIUM
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:623: warning: "GPIO_SPEED_MEDIUM" redefined
+  623 | #define  GPIO_SPEED_MEDIUM GPIO_SPEED_FREQ_MEDIUM
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:617: note: this is the location of the previous definition
+  617 | #define  GPIO_SPEED_MEDIUM      GPIO_SPEED_FREQ_HIGH
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:624: warning: "GPIO_SPEED_HIGH" redefined
+  624 | #define  GPIO_SPEED_HIGH   GPIO_SPEED_FREQ_HIGH
+      | 
+../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:618: note: this is the location of the previous definition
+  618 | #define  GPIO_SPEED_HIGH        GPIO_SPEED_FREQ_VERY_HIGH
+      | 
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32l1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32l1xx.d" -MT"Core/Src/system_stm32l1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32l1xx.o"
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  21316	    128	   2296	  23740	   5cbc	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
+10:00:42 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-size   18650_UPS.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21316	    128	   2296	  23740	   5cbc	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+10:01:05 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-size   18650_UPS.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21316	    128	   2296	  23740	   5cbc	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+10:05:12 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-size   18650_UPS.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21316	    128	   2296	  23740	   5cbc	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+10:06:55 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:114:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  114 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:116:31: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+  116 |    HAL_UART_Transmit(&huart1, &charBuffer, 6, 500);
+      |                               ^~~~~~~~~~~
+      |                               |
+      |                               uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Inc/stm32l1xx_hal_conf.h:285,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h:721:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  721 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+../Core/Src/main.c:120:37: error: 'Font16x26' undeclared (first use in this function); did you mean 'Font_16x26'?
+  120 |    ssd1306_WriteString(&charBuffer, Font16x26, White);
+      |                                     ^~~~~~~~~
+      |                                     Font_16x26
+../Core/Src/main.c:120:37: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:120:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  120 |    ssd1306_WriteString(&charBuffer, Font16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+10:07:21 **** Incremental Build of configuration Debug for project 18650_UPS ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L151xC -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:114:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  114 |    sprintf(charBuffer, "%u\r\n", temp);
+      |            ^~~~~~~~~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+c:\users\leo\eigene programme\stm32cubeide\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:116:31: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+  116 |    HAL_UART_Transmit(&huart1, &charBuffer, 6, 500);
+      |                               ^~~~~~~~~~~
+      |                               |
+      |                               uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Inc/stm32l1xx_hal_conf.h:285,
+                 from ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h:721:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  721 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+../Core/Src/main.c:120:24: warning: passing argument 1 of 'ssd1306_WriteString' from incompatible pointer type [-Wincompatible-pointer-types]
+  120 |    ssd1306_WriteString(&charBuffer, Font_16x26, White);
+      |                        ^~~~~~~~~~~
+      |                        |
+      |                        uint8_t (*)[6] {aka unsigned char (*)[6]}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/ssd1306.h:116:32: note: expected 'char *' but argument is of type 'uint8_t (*)[6]' {aka 'unsigned char (*)[6]'}
+  116 | char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color);
+      |                          ~~~~~~^~~
+arm-none-eabi-gcc -o "18650_UPS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\workspaces\18650_UPS\18650_UPS\STM32L151RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18650_UPS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 18650_UPS.elf
+ 
+arm-none-eabi-size   18650_UPS.elf 
+arm-none-eabi-objdump -h -S  18650_UPS.elf  > "18650_UPS.list"
+arm-none-eabi-objcopy  -O binary  18650_UPS.elf  "18650_UPS.bin"
+   text	   data	    bss	    dec	    hex	filename
+  22836	    128	   2296	  25260	   62ac	18650_UPS.elf
+Finished building: default.size.stdout
+ 
+Finished building: 18650_UPS.bin
+ 
+Finished building: 18650_UPS.list
+ 
