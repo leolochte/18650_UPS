@@ -160,32 +160,61 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
+	  ssd1306_Fill(Black);
 
 	  switch (read_state) {
 	  	  case 0:
-			  //current
-			  HAL_I2C_Mem_Read(&hi2c1, 0x45<<1, 0x07, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
-			  temp = 0.0610352*(float)((aRxBuffer[0]<<8) | aRxBuffer[1]);
-			  sprintf(charBuffer, "%u mA", temp);
-	  		  break;
-	  	  case 1:
 	  		  //vbus
 			  HAL_I2C_Mem_Read(&hi2c1, 0x45<<1, 0x05, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
 			  temp = 3.125*(float)((aRxBuffer[0]<<8) | aRxBuffer[1]);
 			  sprintf(charBuffer, "%u mV", temp);
+			  ssd1306_SetCursor(0, 14);
+			  ssd1306_WriteString(&charBuffer, Font_11x18, White);
+			  sprintf(charBuffer, "Voltage:");
+			  ssd1306_SetCursor(0, 0);
+			  ssd1306_WriteString(&charBuffer, Font_7x10, White);
+			  ssd1306_DrawRectangle(124, 0, 127, 3, White);
+			  ssd1306_DrawRectangle(125, 1, 126, 2, White);
+	  		  break;
+	  	  case 1:
+			  //current
+			  HAL_I2C_Mem_Read(&hi2c1, 0x45<<1, 0x07, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
+			  temp = 0.0610352*(float)((aRxBuffer[0]<<8) | aRxBuffer[1]);
+			  sprintf(charBuffer, "%u mA", temp);
+			  ssd1306_SetCursor(0, 14);
+			  ssd1306_WriteString(&charBuffer, Font_11x18, White);
+			  sprintf(charBuffer, "Current output:");
+			  ssd1306_SetCursor(0, 0);
+			  ssd1306_WriteString(&charBuffer, Font_7x10, White);
+			  ssd1306_DrawRectangle(124, 4, 127, 7, White);
+			  ssd1306_DrawRectangle(125, 5, 126, 6, White);
 	  		  break;
 	  	  case 2:
+			  //power
+			  HAL_I2C_Mem_Read(&hi2c1, 0x45<<1, 0x08, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
+			  temp = 0.2*0.0610352*(float)((aRxBuffer[0]<<16) | aRxBuffer[1]<<8 | aRxBuffer[0]);
+			  sprintf(charBuffer, "%u mW", temp);
+			  ssd1306_SetCursor(0, 14);
+			  ssd1306_WriteString(&charBuffer, Font_11x18, White);
+			  sprintf(charBuffer, "Power output:");
+			  ssd1306_SetCursor(0, 0);
+			  ssd1306_WriteString(&charBuffer, Font_7x10, White);
+			  ssd1306_DrawRectangle(124, 8, 127, 11, White);
+			  ssd1306_DrawRectangle(125, 9, 126, 10, White);
+			  break;
+	  	  case 3:
 			  //dietemp
 			  HAL_I2C_Mem_Read(&hi2c1, 0x45<<1, 0x06, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
 			  temp = 0.125*(float)((aRxBuffer[0]<<8) | aRxBuffer[1]);
 			  temp = temp>>4;
 			  sprintf(charBuffer, "%u C", temp);
-			  break;
-	  	  case 3:
-			  //power
-			  HAL_I2C_Mem_Read(&hi2c1, 0x45<<1, 0x08, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
-			  temp = 0.2*0.0610352*(float)((aRxBuffer[0]<<16) | aRxBuffer[1]<<8 | aRxBuffer[0]);
-			  sprintf(charBuffer, "%u mW", temp);
+			  ssd1306_SetCursor(0, 14);
+			  ssd1306_WriteString(&charBuffer, Font_11x18, White);
+			  sprintf(charBuffer, "Board temperature:");
+			  ssd1306_SetCursor(0, 0);
+			  ssd1306_WriteString(&charBuffer, Font_7x10, White);
+			  ssd1306_DrawRectangle(124, 12, 127, 15, White);
+			  ssd1306_DrawRectangle(125, 13, 126, 14, White);
 			  break;
 	  	  case 4:
 			  //charge status
@@ -193,47 +222,116 @@ int main(void)
 			  temp = (aRxBuffer[0] & 0b00011000)>>3;
 			  switch (temp) {
 				  case 0:
-					  sprintf(charBuffer, "No Chrg");
+					  sprintf(charBuffer, "No charger");
+					  ssd1306_SetCursor(0, 14);
+					  ssd1306_WriteString(&charBuffer, Font_11x18, White);
 					  break;
 				  case 1:
-					  sprintf(charBuffer, "Pre Chrg");
+					  sprintf(charBuffer, "Pre charge");
+					  ssd1306_SetCursor(0, 14);
+					  ssd1306_WriteString(&charBuffer, Font_11x18, White);
 					  break;
 				  case 2:
-					  sprintf(charBuffer, "Charging");
+					  sprintf(charBuffer, "Charging...");
+					  ssd1306_SetCursor(0, 14);
+					  ssd1306_WriteString(&charBuffer, Font_11x18, White);
 					  break;
 				  case 3:
 					  sprintf(charBuffer, "Done!");
+					  ssd1306_SetCursor(0, 14);
+					  ssd1306_WriteString(&charBuffer, Font_11x18, White);
 					  break;
 				  default:
 					  break;
 			  }
+			  sprintf(charBuffer, "Charge status:");
+			  ssd1306_SetCursor(0, 0);
+			  ssd1306_WriteString(&charBuffer, Font_7x10, White);
+			  ssd1306_DrawRectangle(124, 16, 127, 19, White);
+			  ssd1306_DrawRectangle(125, 17, 126, 18, White);
 			  break;
 		  case 5:
-			  sprintf(charBuffer, "Contrast");
+			  if (charge_enable == 0) {
+				  sprintf(charBuffer, "OFF");
+				  ssd1306_SetCursor(1, 14);
+				  ssd1306_WriteString(&charBuffer, Font_11x18, Black);
+				  sprintf(charBuffer, "ON ");
+				  ssd1306_SetCursor(38, 14);
+				  ssd1306_WriteString(&charBuffer, Font_11x18, White);
+			  } else if (charge_enable == 1) {
+				  sprintf(charBuffer, "OFF");
+				  ssd1306_SetCursor(1, 14);
+				  ssd1306_WriteString(&charBuffer, Font_11x18, White);
+				  sprintf(charBuffer, "ON ");
+				  ssd1306_SetCursor(38, 14);
+				  ssd1306_WriteString(&charBuffer, Font_11x18, Black);
+			  }
+			  ssd1306_DrawRectangle(0, 13, 70, 31, White);
+
+
+			  sprintf(charBuffer, "Charge control:");
+			  ssd1306_SetCursor(0, 0);
+			  ssd1306_WriteString(&charBuffer, Font_7x10, White);
+			  ssd1306_DrawRectangle(124, 20, 127, 23, White);
+			  ssd1306_DrawRectangle(125, 21, 126, 22, White);
 			  break;
 		  case 6:
 			  if (usb_version == 2) {
-				  sprintf(charBuffer, "USB 0.5A");
+				  sprintf(charBuffer, "0.5A");
+				  ssd1306_SetCursor(1, 14);
+				  ssd1306_WriteString(&charBuffer, Font_11x18, Black);
+				  sprintf(charBuffer, "1.0A");
+				  ssd1306_SetCursor(50, 14);
+				  ssd1306_WriteString(&charBuffer, Font_11x18, White);
 			  } else if (usb_version == 3) {
-				  sprintf(charBuffer, "USB 1A");
+				  sprintf(charBuffer, "0.5A");
+				  ssd1306_SetCursor(1, 14);
+				  ssd1306_WriteString(&charBuffer, Font_11x18, White);
+				  sprintf(charBuffer, "1.0A ");
+				  ssd1306_SetCursor(50, 14);
+				  ssd1306_WriteString(&charBuffer, Font_11x18, Black);
 			  }
+			  ssd1306_DrawRectangle(0, 13, 104, 31, White);
+
+			  sprintf(charBuffer, "USB current limit:");
+			  ssd1306_SetCursor(0, 0);
+			  ssd1306_WriteString(&charBuffer, Font_7x10, White);
+			  ssd1306_DrawRectangle(124, 24, 127, 27, White);
+			  ssd1306_DrawRectangle(125, 25, 126, 26, White);
 			  break;
 		  case 7:
-			  if (charge_enable == 0) {
-				  sprintf(charBuffer, "Chrg Dis");
-			  } else if (charge_enable == 1) {
-				  sprintf(charBuffer, "Chrg En");
+			  switch (contrast) {
+				  case 255:
+					  sprintf(charBuffer, "100");
+					  break;
+				  case 191:
+					  sprintf(charBuffer, "75");
+					  break;
+				  case 127:
+					  sprintf(charBuffer, "50");
+					  break;
+				  case 63:
+					  sprintf(charBuffer, "25");
+					  break;
+				  case 0:
+					  sprintf(charBuffer, "0");
+					  break;
+				  default:
+					  break;
 			  }
+
+			  ssd1306_SetCursor(0, 14);
+			  ssd1306_WriteString(&charBuffer, Font_11x18, White);
+			  sprintf(charBuffer, "Screen brightness:");
+			  ssd1306_SetCursor(0, 0);
+			  ssd1306_WriteString(&charBuffer, Font_7x10, White);
+			  ssd1306_DrawRectangle(124, 28, 127, 31, White);
+			  ssd1306_DrawRectangle(125, 29, 126, 30, White);
 		  	  break;
 	  	  default:
 		  	  break;
 	  }
 
-
-
-	  ssd1306_Fill(Black);
-	  ssd1306_SetCursor(0, 0);
-	  ssd1306_WriteString(&charBuffer, Font_16x26, White);
 	  ssd1306_UpdateScreen();
 
 	  HAL_Delay(100);
@@ -448,20 +546,20 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		 state_SW_U = 0;
 		 HAL_TIM_Base_Stop_IT(&htim2);
 
-		 if (read_state == 7) {
-			 read_state = 0;
+		 if (read_state == 0) {
+			 //read_state = 7;
 		 } else {
-			 read_state++;
+			 read_state--;
 		 }
 	 }
 	 if (state_SW_D == 1 && HAL_GPIO_ReadPin(SW_D_GPIO_Port, SW_D_Pin) == GPIO_PIN_RESET) {
 		 state_SW_D = 0;
 		 HAL_TIM_Base_Stop_IT(&htim2);
 
-		 if (read_state == 0) {
-			 read_state = 7;
+		 if (read_state == 7) {
+			 //read_state = 0;
 		 } else {
-			 read_state--;
+			 read_state++;
 		 }
 	 }
 	 if (state_SW_L == 1 && HAL_GPIO_ReadPin(SW_L_GPIO_Port, SW_L_Pin) == GPIO_PIN_RESET) {
@@ -470,13 +568,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 		 switch (read_state) {
 		 	 case 5:
-		 		 if (contrast > 0x3f) {
-		 			 contrast = contrast-64;
-		 		 	 ssd1306_SetContrast(contrast);
-		 		 } else if (contrast == 0x3f) {
-		 			 contrast = contrast-63;
-		 			 ssd1306_SetContrast(contrast);
-		 		 }
+		 		 charge_enable = 0;
+
+		 		 HAL_I2C_Mem_Read(&hi2c1, 0x09<<1, 0x01, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
+		 		 TxBuffer[0] = aRxBuffer[0] | 0b00001000;
+		 		 TxBuffer[1] = 0x00;
+		 		 HAL_I2C_Mem_Write(&hi2c1, 0x09<<1, 0x01, 1, TxBuffer, 1, 1000);
+		 		 HAL_I2C_Mem_Read(&hi2c1, 0x09<<1, 0x01, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
 		 		 break;
 		 	 case 6:
 		 		 usb_version = 2;
@@ -488,13 +586,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 				 HAL_I2C_Mem_Write(&hi2c1, 0x09<<1, 0x02, 1, TxBuffer, 1, 1000);
 		 		 break;
 		 	 case 7:
-		 		 charge_enable = 0;
-
-		 		 HAL_I2C_Mem_Read(&hi2c1, 0x09<<1, 0x01, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
-		 		 TxBuffer[0] = aRxBuffer[0] | 0b00001000;
-		 		 TxBuffer[1] = 0x00;
-		 		 HAL_I2C_Mem_Write(&hi2c1, 0x09<<1, 0x01, 1, TxBuffer, 1, 1000);
-		 		 HAL_I2C_Mem_Read(&hi2c1, 0x09<<1, 0x01, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
+		 		 if (contrast > 63) {
+		 			 contrast = contrast-64;
+		 		 	 ssd1306_SetContrast(contrast);
+		 		 } else if (contrast == 63) {
+		 			 contrast = contrast-63;
+		 			 ssd1306_SetContrast(contrast);
+		 		 }
 		 		 break;
 		 	 default:
 		 		 break;
@@ -508,13 +606,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 		 switch (read_state) {
 		 	 case 5:
-		 		 if (contrast == 0x00) {
-		 			 contrast = contrast+63;
-		 		 	 ssd1306_SetContrast(contrast);
-		 		 } else if (contrast > 0 && contrast < 0xFF) {
-		 			 contrast = contrast+64;
-					 ssd1306_SetContrast(contrast);
-		 		 }
+		 		 charge_enable = 1;
+		 		 HAL_I2C_Mem_Read(&hi2c1, 0x09<<1, 0x01, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
+				 TxBuffer[0] = aRxBuffer[0] & 0b11110111;
+				 TxBuffer[1] = 0x00;
+				 HAL_I2C_Mem_Write(&hi2c1, 0x09<<1, 0x01, 1, TxBuffer, 1, 1000);
+				 HAL_I2C_Mem_Read(&hi2c1, 0x09<<1, 0x01, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
 		 		 break;
 		 	 case 6:
 		 		 usb_version = 3;
@@ -526,12 +623,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 				 HAL_I2C_Mem_Write(&hi2c1, 0x09<<1, 0x02, 1, TxBuffer, 1, 1000);
 		 		 break;
 		 	 case 7:
-		 		 charge_enable = 1;
-		 		 HAL_I2C_Mem_Read(&hi2c1, 0x09<<1, 0x01, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
-				 TxBuffer[0] = aRxBuffer[0] & 0b11110111;
-				 TxBuffer[1] = 0x00;
-				 HAL_I2C_Mem_Write(&hi2c1, 0x09<<1, 0x01, 1, TxBuffer, 1, 1000);
-				 HAL_I2C_Mem_Read(&hi2c1, 0x09<<1, 0x01, 1, aRxBuffer, sizeof(aRxBuffer), 1000);
+		 		 if (contrast == 0) {
+		 			 contrast = contrast+63;
+		 		 	 ssd1306_SetContrast(contrast);
+		 		 } else if (contrast > 0 && contrast != 255) {
+		 			 contrast = contrast+64;
+					 ssd1306_SetContrast(contrast);
+		 		 }
 		 		 break;
 		 	 default:
 		 		 break;
