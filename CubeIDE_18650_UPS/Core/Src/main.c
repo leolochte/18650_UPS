@@ -50,7 +50,7 @@ UART_HandleTypeDef huart1;
 /* USER CODE BEGIN PV */
 uint8_t aRxBuffer[3];
 uint8_t TxBuffer[2];
-uint8_t charBuffer[10];
+char charBuffer[20];
 uint16_t temp;
 
 volatile uint8_t read_state = 0;
@@ -170,10 +170,10 @@ int main(void)
 			  temp = 3.125*(float)((aRxBuffer[0]<<8) | aRxBuffer[1]);
 			  sprintf(charBuffer, "%u mV", temp);
 			  ssd1306_SetCursor(0, 14);
-			  ssd1306_WriteString(&charBuffer, Font_11x18, White);
+			  ssd1306_WriteString(charBuffer, Font_11x18, White);
 			  sprintf(charBuffer, "Voltage:");
 			  ssd1306_SetCursor(0, 0);
-			  ssd1306_WriteString(&charBuffer, Font_7x10, White);
+			  ssd1306_WriteString(charBuffer, Font_7x10, White);
 			  ssd1306_DrawRectangle(124, 0, 127, 3, White);
 			  ssd1306_DrawRectangle(125, 1, 126, 2, White);
 	  		  break;
@@ -183,10 +183,10 @@ int main(void)
 			  temp = 0.0610352*(float)((aRxBuffer[0]<<8) | aRxBuffer[1]);
 			  sprintf(charBuffer, "%u mA", temp);
 			  ssd1306_SetCursor(0, 14);
-			  ssd1306_WriteString(&charBuffer, Font_11x18, White);
+			  ssd1306_WriteString(charBuffer, Font_11x18, White);
 			  sprintf(charBuffer, "Current output:");
 			  ssd1306_SetCursor(0, 0);
-			  ssd1306_WriteString(&charBuffer, Font_7x10, White);
+			  ssd1306_WriteString(charBuffer, Font_7x10, White);
 			  ssd1306_DrawRectangle(124, 4, 127, 7, White);
 			  ssd1306_DrawRectangle(125, 5, 126, 6, White);
 	  		  break;
@@ -196,10 +196,10 @@ int main(void)
 			  temp = 0.2*0.0610352*(float)((aRxBuffer[0]<<16) | aRxBuffer[1]<<8 | aRxBuffer[0]);
 			  sprintf(charBuffer, "%u mW", temp);
 			  ssd1306_SetCursor(0, 14);
-			  ssd1306_WriteString(&charBuffer, Font_11x18, White);
+			  ssd1306_WriteString(charBuffer, Font_11x18, White);
 			  sprintf(charBuffer, "Power output:");
 			  ssd1306_SetCursor(0, 0);
-			  ssd1306_WriteString(&charBuffer, Font_7x10, White);
+			  ssd1306_WriteString(charBuffer, Font_7x10, White);
 			  ssd1306_DrawRectangle(124, 8, 127, 11, White);
 			  ssd1306_DrawRectangle(125, 9, 126, 10, White);
 			  break;
@@ -210,10 +210,10 @@ int main(void)
 			  temp = temp>>4;
 			  sprintf(charBuffer, "%u C", temp);
 			  ssd1306_SetCursor(0, 14);
-			  ssd1306_WriteString(&charBuffer, Font_11x18, White);
+			  ssd1306_WriteString(charBuffer, Font_11x18, White);
 			  sprintf(charBuffer, "Board temperature:");
 			  ssd1306_SetCursor(0, 0);
-			  ssd1306_WriteString(&charBuffer, Font_7x10, White);
+			  ssd1306_WriteString(charBuffer, Font_7x10, White);
 			  ssd1306_DrawRectangle(124, 12, 127, 15, White);
 			  ssd1306_DrawRectangle(125, 13, 126, 14, White);
 			  break;
@@ -225,29 +225,29 @@ int main(void)
 				  case 0:
 					  sprintf(charBuffer, "No charger");
 					  ssd1306_SetCursor(0, 14);
-					  ssd1306_WriteString(&charBuffer, Font_11x18, White);
+					  ssd1306_WriteString(charBuffer, Font_11x18, White);
 					  break;
 				  case 1:
 					  sprintf(charBuffer, "Pre charge");
 					  ssd1306_SetCursor(0, 14);
-					  ssd1306_WriteString(&charBuffer, Font_11x18, White);
+					  ssd1306_WriteString(charBuffer, Font_11x18, White);
 					  break;
 				  case 2:
 					  sprintf(charBuffer, "Charging...");
 					  ssd1306_SetCursor(0, 14);
-					  ssd1306_WriteString(&charBuffer, Font_11x18, White);
+					  ssd1306_WriteString(charBuffer, Font_11x18, White);
 					  break;
 				  case 3:
 					  sprintf(charBuffer, "Done!");
 					  ssd1306_SetCursor(0, 14);
-					  ssd1306_WriteString(&charBuffer, Font_11x18, White);
+					  ssd1306_WriteString(charBuffer, Font_11x18, White);
 					  break;
 				  default:
 					  break;
 			  }
 			  sprintf(charBuffer, "Charge status:");
 			  ssd1306_SetCursor(0, 0);
-			  ssd1306_WriteString(&charBuffer, Font_7x10, White);
+			  ssd1306_WriteString(charBuffer, Font_7x10, White);
 			  ssd1306_DrawRectangle(124, 16, 127, 19, White);
 			  ssd1306_DrawRectangle(125, 17, 126, 18, White);
 			  break;
@@ -255,24 +255,24 @@ int main(void)
 			  if (charge_enable == 0) {
 				  sprintf(charBuffer, "OFF");
 				  ssd1306_SetCursor(1, 14);
-				  ssd1306_WriteString(&charBuffer, Font_11x18, Black);
+				  ssd1306_WriteString(charBuffer, Font_11x18, Black);
 				  sprintf(charBuffer, "ON ");
 				  ssd1306_SetCursor(38, 14);
-				  ssd1306_WriteString(&charBuffer, Font_11x18, White);
+				  ssd1306_WriteString(charBuffer, Font_11x18, White);
 			  } else if (charge_enable == 1) {
 				  sprintf(charBuffer, "OFF");
 				  ssd1306_SetCursor(1, 14);
-				  ssd1306_WriteString(&charBuffer, Font_11x18, White);
+				  ssd1306_WriteString(charBuffer, Font_11x18, White);
 				  sprintf(charBuffer, "ON ");
 				  ssd1306_SetCursor(38, 14);
-				  ssd1306_WriteString(&charBuffer, Font_11x18, Black);
+				  ssd1306_WriteString(charBuffer, Font_11x18, Black);
 			  }
 			  ssd1306_DrawRectangle(0, 13, 70, 31, White);
 
 
 			  sprintf(charBuffer, "Charge control:");
 			  ssd1306_SetCursor(0, 0);
-			  ssd1306_WriteString(&charBuffer, Font_7x10, White);
+			  ssd1306_WriteString(charBuffer, Font_7x10, White);
 			  ssd1306_DrawRectangle(124, 20, 127, 23, White);
 			  ssd1306_DrawRectangle(125, 21, 126, 22, White);
 			  break;
@@ -280,23 +280,23 @@ int main(void)
 			  if (usb_version == 2) {
 				  sprintf(charBuffer, "0.5A");
 				  ssd1306_SetCursor(1, 14);
-				  ssd1306_WriteString(&charBuffer, Font_11x18, Black);
+				  ssd1306_WriteString(charBuffer, Font_11x18, Black);
 				  sprintf(charBuffer, "1.0A");
 				  ssd1306_SetCursor(50, 14);
-				  ssd1306_WriteString(&charBuffer, Font_11x18, White);
+				  ssd1306_WriteString(charBuffer, Font_11x18, White);
 			  } else if (usb_version == 3) {
 				  sprintf(charBuffer, "0.5A");
 				  ssd1306_SetCursor(1, 14);
-				  ssd1306_WriteString(&charBuffer, Font_11x18, White);
+				  ssd1306_WriteString(charBuffer, Font_11x18, White);
 				  sprintf(charBuffer, "1.0A ");
 				  ssd1306_SetCursor(50, 14);
-				  ssd1306_WriteString(&charBuffer, Font_11x18, Black);
+				  ssd1306_WriteString(charBuffer, Font_11x18, Black);
 			  }
 			  ssd1306_DrawRectangle(0, 13, 104, 31, White);
 
 			  sprintf(charBuffer, "USB current limit:");
 			  ssd1306_SetCursor(0, 0);
-			  ssd1306_WriteString(&charBuffer, Font_7x10, White);
+			  ssd1306_WriteString(charBuffer, Font_7x10, White);
 			  ssd1306_DrawRectangle(124, 24, 127, 27, White);
 			  ssd1306_DrawRectangle(125, 25, 126, 26, White);
 			  break;
@@ -322,10 +322,10 @@ int main(void)
 			  }
 
 			  ssd1306_SetCursor(0, 14);
-			  ssd1306_WriteString(&charBuffer, Font_11x18, White);
+			  ssd1306_WriteString(charBuffer, Font_11x18, White);
 			  sprintf(charBuffer, "Screen brightness:");
 			  ssd1306_SetCursor(0, 0);
-			  ssd1306_WriteString(&charBuffer, Font_7x10, White);
+			  ssd1306_WriteString(charBuffer, Font_7x10, White);
 			  ssd1306_DrawRectangle(124, 28, 127, 31, White);
 			  ssd1306_DrawRectangle(125, 29, 126, 30, White);
 		  	  break;
