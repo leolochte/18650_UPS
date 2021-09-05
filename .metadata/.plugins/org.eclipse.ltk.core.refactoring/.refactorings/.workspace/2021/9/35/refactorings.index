@@ -1,6 +1,0 @@
-1630655956285	Rename resource 'CubeIDE_18650_UPS'
-1630656006306	Delete resource '18650_UPS/test_OpenOCD.launch'
-1630656011535	Delete resource '18650_UPS/18650_UPS Debug.launch'
-1630656016236	Delete resource '18650_UPS/test_GDB.launch'
-1630656019467	Delete resource '18650_UPS/test_OpenOCD.cfg'
-1630656023216	Delete resource '18650_UPS/18650_UPS Debug.cfg'
