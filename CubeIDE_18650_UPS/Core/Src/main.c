@@ -160,6 +160,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
+
 	  ssd1306_Fill(Black);
 
 	  switch (read_state) {
